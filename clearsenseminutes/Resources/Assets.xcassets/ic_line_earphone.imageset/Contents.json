@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_line_earphone.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

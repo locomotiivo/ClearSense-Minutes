@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="klr-7i-Y4T">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="PretendardGOVVariable.ttf">
+            <string>PretendardGOVVariable-Bold</string>
+            <string>PretendardGOVVariable-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--LoadingVC-->
+        <scene sceneID="MPn-ZC-nDD">
+            <objects>
+                <viewController id="klr-7i-Y4T" customClass="LoadingVC" customModule="ClearSense" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sgD-DX-Tp6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_splash" translatesAutoresizingMaskIntoConstraints="NO" id="bZN-WY-BtK">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_w" translatesAutoresizingMaskIntoConstraints="NO" id="mBw-dA-ihh">
+                                <rect key="frame" x="117" y="397" width="159" height="58"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="r0a-r4-lep">
+                                <rect key="frame" x="178" y="482.66666666666669" width="37" height="37.000000000000057"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHD-7a-3Uj">
+                                <rect key="frame" x="20" y="539.66666666666663" width="353" height="0.0"/>
+                                <fontDescription key="fontDescription" name="PretendardGOVVariable-Regular" family="Pretendard GOV Variable" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.77254901960784317" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPZ-kB-Bv3">
+                                <rect key="frame" x="132.66666666666666" y="559.66666666666663" width="127.99999999999997" height="22.666666666666629"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="tlg-Uh-TXf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PretendardGOVVariable-Bold" family="Pretendard GOV Variable" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="  Retry">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="medium" variableValue="0.80000000000000004"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="heavy"/>
+                                </state>
+                                <connections>
+                                    <action selector="retry" destination="klr-7i-Y4T" eventType="touchUpInside" id="Wf1-WI-rrN"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ces_mark" translatesAutoresizingMaskIntoConstraints="NO" id="ZEi-wh-aQe">
+                                <rect key="frame" x="144.66666666666666" y="726" width="104" height="67"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iaY-Cv-PGR"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iaY-Cv-PGR" firstAttribute="bottom" secondItem="ZEi-wh-aQe" secondAttribute="bottom" constant="25" id="0aW-tP-AX8"/>
+                            <constraint firstItem="mBw-dA-ihh" firstAttribute="centerY" secondItem="sgD-DX-Tp6" secondAttribute="centerY" id="6jw-NP-og4"/>
+                            <constraint firstItem="bZN-WY-BtK" firstAttribute="leading" secondItem="iaY-Cv-PGR" secondAttribute="leading" id="IOa-vp-aVz"/>
+                            <constraint firstItem="ZEi-wh-aQe" firstAttribute="centerX" secondItem="sgD-DX-Tp6" secondAttribute="centerX" id="KVE-Zi-1AR"/>
+                            <constraint firstItem="bZN-WY-BtK" firstAttribute="trailing" secondItem="iaY-Cv-PGR" secondAttribute="trailing" id="PZb-6O-Tbg"/>
+                            <constraint firstItem="r0a-r4-lep" firstAttribute="centerY" secondItem="sgD-DX-Tp6" secondAttribute="centerY" constant="75" id="Tcf-qK-oQZ"/>
+                            <constraint firstItem="bZN-WY-BtK" firstAttribute="top" secondItem="sgD-DX-Tp6" secondAttribute="top" id="Tgq-aM-wVU"/>
+                            <constraint firstAttribute="bottom" secondItem="bZN-WY-BtK" secondAttribute="bottom" id="av3-qD-JOL"/>
+                            <constraint firstItem="iaY-Cv-PGR" firstAttribute="trailing" secondItem="ZHD-7a-3Uj" secondAttribute="trailing" constant="20" id="dZ7-Sh-8I7"/>
+                            <constraint firstItem="YPZ-kB-Bv3" firstAttribute="top" secondItem="ZHD-7a-3Uj" secondAttribute="bottom" constant="20" id="hEm-al-ukJ"/>
+                            <constraint firstItem="r0a-r4-lep" firstAttribute="centerX" secondItem="sgD-DX-Tp6" secondAttribute="centerX" id="jdz-I7-5RZ"/>
+                            <constraint firstItem="ZHD-7a-3Uj" firstAttribute="leading" secondItem="iaY-Cv-PGR" secondAttribute="leading" constant="20" id="mde-UI-60w"/>
+                            <constraint firstItem="YPZ-kB-Bv3" firstAttribute="centerX" secondItem="sgD-DX-Tp6" secondAttribute="centerX" id="qjb-dG-cg5"/>
+                            <constraint firstItem="ZHD-7a-3Uj" firstAttribute="top" secondItem="r0a-r4-lep" secondAttribute="bottom" constant="20" id="tGd-Vu-tEL"/>
+                            <constraint firstItem="mBw-dA-ihh" firstAttribute="centerX" secondItem="sgD-DX-Tp6" secondAttribute="centerX" id="w6n-r5-XT3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btn_retry" destination="YPZ-kB-Bv3" id="DCq-yh-B2d"/>
+                        <outlet property="label_err" destination="ZHD-7a-3Uj" id="thp-9v-yWc"/>
+                        <outlet property="loaderView" destination="r0a-r4-lep" id="VMz-hW-bwp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DZg-0B-FcH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="6"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
+        <image name="bg_splash" width="393" height="852"/>
+        <image name="ces_mark" width="104" height="67"/>
+        <image name="logo_w" width="159" height="58"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

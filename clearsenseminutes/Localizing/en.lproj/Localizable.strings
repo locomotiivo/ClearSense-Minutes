@@ -1,0 +1,227 @@
+/*
+  Localizable.strings
+  clearsenseminutes
+
+  Created by KooBH on 1/4/24.
+  
+*/
+
+"NSMicrophoneUsageDescription" = "The microphone is used by this app to enable speech recognition and recorded to improve performance.";
+"NSSpeechRecognitionUsageDescription" = "The microphone is used by this app to enable speech recognition and recorded to improve performance.";
+
+"SUCCESS" = "Success";
+"SUCCESS_MSG" = "Process Successful.";
+"ERROR" = "Error";
+
+"CLEARSENSE_PRO" = "ClearSense Pro";
+"DAY" = "day";
+"WEEK" = "week";
+"MONTH" = "month";
+"YEAR" = "year";
+"FREE_TRIAL" = "free trial";
+"UNLOCKS" = "Subscribe to ClearSense Pro";
+"SUBSCRIPTION_DESC0" = "Experience a brand new level of clarity with ClearSense Audio, with only $3 per month!";
+"SUBSCRIPTION_DESC1" = "Subscriptions will be charged to your credit card through your iTunes account. Your subscription will automatically renew unless canceled at least 24 hours before the end of the current period. You will not be able to cancel the subscription once activated. Manage your subscriptions in Account Settings after purchase.";
+"RESTORE" = "Restore Purchase";
+"TOS" = "Terms of Service";
+"PRIVACY" = "Privacy Policy";
+
+"AUTO_OFF" = "Don't show this popup again";
+"ADVANCED_SETTINGS" = "Advanced Settings";
+"ROUTE_CHANGE_HEADER" = "Output device changed";
+"ROUTE_CHANGE_MSG" = "Headphone detected: ";
+"ROUTE_CHANGE_ERR" = "No headphones detected.";
+"ROUTE_CHANGE_RECOMMEND" = "Please try again after connecting a headphone.";
+
+"EQUALIZER" = "Equalizer";
+"FLAT" = "Flatten";
+"INPUT_POPUP_HEADER" = "Select Input";
+"OUTPUT_POPUP_HEADER" = "Select Output";
+"LATENCY_LABEL" = "Latency Configuration";
+"LATENCY_0" = "Low";
+"LATENCY_1" = "Default";
+"SP_OPT_LABEL" = "Directionality";
+"SP_OPT_0" = "Static";
+"SP_OPT_1" = "Dynamic";
+"TITLE" = "ClearSense Audio";
+"VOICE" = "Voice";
+
+
+"AGC_NOT_LABEL" = "Normal";
+"AGC_LABEL" = "AGC";
+"BYPASS_NOT_LABEL" = "Process";
+"BYPASS_LABEL" = "Bypass";
+"PURCHASE_HEADER" = "Subscription Manager";
+"RELOAD" = "Restore Purchase History";
+"DEL_SUCCESS" = "Successfully deleted data";
+"DEL_CANCEL" = "Process is cancelled by user actions";
+"DELETE_CONFIRM" = "Are you sure you want to delete selected file(s)?";
+"PURCHASED" = "Purchased";
+"UNAVAILABLE" = "Unavailable";
+"BUY" = "Buy";
+"OK" = "Ok";
+"YES" = "Yes";
+"NO" = "No";
+"CANCEL" = "Cancel";
+"RELOADED" = "Restored Purchase History";
+"ERR_000" = "Unexpected Error Occurred";
+"ERR_100_%@" = "Error occurred playing %@";
+"ERR_101_%@" = "Error occurred sharing %@";
+"ERR_102_%@" = "Error occurred deleting %@";
+"ERR_200" = "Unable to locate row to refresh";
+"ERR_300" = "Up to 3 presets can be created";
+
+"BACK" = "Back";
+"LICENSE_TITLE" = "Information";
+"LICENSE_SUBTITLE" = "Clear Sense Audio V0.0.0.";
+"LICENSE_TEXT" =
+"Our program uses the following list of third-party softwares.\n
+You can click on the software names below to see their respective license.";
+"INPUT" = "Input";
+"OUTPUT" = "Output";
+"SETTINGS" = "Settings";
+"FILE_MANAGER" = "Saved Files";
+"LANGUAGE_POPUP_HEADER" = "Select Language";
+ 
+/* Subscription */
+"SUBSCRIPTION" = "Subscription";
+"OPTION_TITLE" = "Option";
+"OPTION_N" = "Not Active";
+"OPTION_M" = "Monthly";
+"OPTION_Y" = "Yearly";
+"DATE_TITLE" = "Period";
+"CLOSE" = "Close";
+"SUB_MSG_BETA" = "Trial Period!";
+
+/* Language */
+"LANGUAGE" = "Language";
+"LANGUAGE_SELECT" = "Select Language";
+"LANGUAGE_ko" = "Korean";
+"LANGUAGE_jp" = "Japanese";
+"LANGUAGE_en" = "English";
+"APPLY" = "Apply";
+
+"SHARE" = "Share";
+"EDIT" = "Rename";
+"DELETE" = "Delete";
+"ALL" = "All";
+
+"SHARE_SUCCESS" = "Success!";
+"EDITABLE_ONLY_ONE" = "Rename one file at a time";
+"ATLEAST_FAILURE" = "Please, Select at least one";
+
+"NOISE_FLOOR_SLIDER" = "Noise Floor Slider";
+
+"LOGO" = "logo_en";
+
+"MANUAL" = "Manual";
+"MODEL_SELECT" = "Select Model";
+"LOW_LATENCY" = "Low Latency";
+"AUDIO_SETTING" = "Audio Setting";
+"COMPATIBILITY" = "Compatibility";
+"DIRECTION_SENSE" = "Direction Awareness";
+"SIZE_CONTROL" = "Size Adjustment";
+"LATENCY_CONTROL" = "Latency Adjustment";
+
+"CONTACT" = "Contact";
+
+"TERMS_OF_USE" = "Terms of Use";
+"PRIVACY_POLICY" = "Privacy Policy";
+
+"URL_TOS" = "https://clearsenseaudio.com/bbs/content.php?co_id=provision";
+"URL_PRIVACY" = "https://clearsenseaudio.com/bbs/content.php?co_id=privacy";
+
+"ONBOARDING_LANGUAGE1" = "en_onboarding1";
+"ONBOARDING_LANGUAGE2" = "en_onboarding2";
+"ONBOARDING_LANGUAGE3" = "en_onboarding3";
+"ONBOARDING_LANGUAGE4" = "en_onboarding4";
+
+"SKIP" = "Skip";
+
+"SELECTED" = " selected";
+
+"GUIDE" = "Guide";
+
+"NOTICE" = "Notice";
+"NOTICE_CONTENT" = "Your trial has ended. You will be redirected to the App Store for update.";
+"NOTICE_UPDATE" = "Your app's version is outdated. You will be redirected to the App Store for update.";
+
+"NOFILE" = "There are no files.";
+
+"DONOT_SHOW_AGAIN" = "Do not show again";
+
+/* Common */
+"DEFAULT" = "Default";
+"RESET" = "Reset";
+
+/* Manual */
+"MANUAL_HTML" = "manual_en";
+"MANUAL_PERSONAL" = "personalization_en";
+
+/* Personalization */
+"PERSONALIZATION" = "Personalization";
+"PERSONAL_MSG_1" = "Adjust the slider until the loudness of each frequency is similar";
+"PERSONAL_MSG_RESET" = "Values for both ears have been reset";
+"PERSONAL_MSG_DEFAULT" = "Values for both ears have been set 0";
+"HEAR_ON" = "Hear";
+"HEAR_OFF" = "Stop";
+"MIRROR" = "Mirror to other ear";
+"MIRROR_MSG_LEFT" = "The same settings are applied to the right ear";
+"MIRROR_MSG_RIGHT" = "The same settings are applied to the left ear";
+"EAR_LEFT" = "Left Ear";
+"EAR_RIGHT" = "Right Ear";
+"CURRENT_FREQ" = "Selected Frequency : ";
+
+/* Equalizer Personalization Preset */
+"EQ_PERSONER_PRESET" = "Equalizer - Personal Preset";
+"PRESET" = "Preset";
+"BOTH_EQUAL" = "Equal on Both Sides";
+"USING_DEVICE" = "Connected Device";
+"ALL_RETEST" = "Retest All";
+"DETAIL_TUNING" = "Advanced Tuning";
+"WANT_REMOVE_PRESET" = "Do you want to delete the currently selected preset?";
+
+/* Detail Tuning */
+"DETAIL_TUNING" = "Advanced Tuning";
+"LEFT_RIGHT_EAR" = "<Left/Right> Ear";
+"CURRENT_FREQUENCY" = "Current Frequency Setting";
+"RETEST" = "Retest";
+"SAME_OTHER_EARS" = "Match Them";
+
+/* Simple Hearing Test */
+"SIMPLE_HEARING_TEST" = "Basic Hearing Test";
+"DO_LATER" = "Do It Later";
+"LEFT" = "Left";
+"RIGHT" = "Right";
+"DONT_KNOW" = "Not Sure";
+"SELECT_EAR" = "Selected Ear";
+"NEXT" = "Next";
+"START" = "Start";
+"DONT_KNOW_RUDELY" = "Don't Know";
+"RETRY" = "Retry";
+"WANT_SAME" = "Make Them the Same";
+"COMPLETE" = "Complete";
+"OVERWRITE" = "Overwrite";
+/* Step1 */
+"STEP_1_1_TEXT" = "To customize your experience,\nwe'll conduct a basic hearing test.";
+"STEP_1_1_DESC_1" = "This test is not medically certified.";
+"STEP_1_1_DESC_2" = "Please ensure a quiet environment.";
+"STEP_1_1_DESC_3" = "You can repeat the test anytime.";
+"STEP_1_2_TEXT" = "Do you often have\ndifficulty hearing\nother people's voices?";
+"STEP_1_3_TEXT" = "Would you like to skip\npersonalized sound\nadjustment?";
+/* Step2 */
+"STEP_2_1_TEXT" = "Which ear do you\ntypically use\nfor phone calls?";
+"STEP_2_2_TEXT" = "\nWear the earphone\non only one ear.";
+"STEP_2_3_TEXT" = "Set the volume\nat the lowest\naudible level.";
+/* Step3 */
+"STEP_3_1_TEXT" = "Remember\nhow many times\nyou hear the sound.";
+"STEP_3_2_TEXT" = "How many times\ndid you hear\nthe sound?";
+"STEP_3_3_TEXT" = "To fine-tune the results,\nwe'll conduct a few\nmore tests. Remember\nhow many times\nyou hear the sound.";
+"STEP_3_4_TOP" = "\nMeasurement Completed.";
+"STEP_3_4_BOTTOM" = "\nWould you like\nto proceed with\nadditional testing?";
+/* Step4 */
+"STEP_4_1_TEXT" = "The test is complete.";
+
+/* Advanced Settings */
+"ADVANCED" = "Advanced Settings";
+

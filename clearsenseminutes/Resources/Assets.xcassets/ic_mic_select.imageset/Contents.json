@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_mic_select.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

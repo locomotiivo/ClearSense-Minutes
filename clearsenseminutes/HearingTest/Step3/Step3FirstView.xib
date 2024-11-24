@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Step3FirstView" customModule="ClearSense" customModuleProvider="target">
+            <connections>
+                <outlet property="animationView" destination="Nyu-wM-r4k" id="f74-RZ-U0y"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyu-wM-r4k" customClass="LottieAnimationView" customModule="Lottie">
+                    <rect key="frame" x="56.666666666666657" y="60" width="280" height="280"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Nyu-wM-r4k" secondAttribute="height" multiplier="1:1" id="gK4-QQ-flh"/>
+                        <constraint firstAttribute="height" constant="280" id="pnb-YR-BFw"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34E-va-30J" customClass="LanguageLabel" customModule="ClearSense" customModuleProvider="target">
+                    <rect key="frame" x="63.666666666666657" y="340" width="266" height="71.666666666666686"/>
+                    <string key="text">소리가 몇 번
+들리는지 기억해주세요</string>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localized" value="STEP_3_1_TEXT"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-fT-cxY" customClass="LanguageButton" customModule="ClearSense" customModuleProvider="target">
+                    <rect key="frame" x="27" y="768" width="339" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="S7U-xG-9AX"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="시작" cornerStyle="capsule">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="baseBackgroundColor" name="btn_color"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localized" value="START"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="onClickStart:" destination="-1" eventType="touchUpInside" id="76A-z5-4mh"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Fea-fT-cxY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="27" id="En5-IB-ykE"/>
+                <constraint firstItem="34E-va-30J" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QuM-jc-qOD"/>
+                <constraint firstItem="34E-va-30J" firstAttribute="top" secondItem="Nyu-wM-r4k" secondAttribute="bottom" id="WFa-GZ-HzG"/>
+                <constraint firstItem="Nyu-wM-r4k" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dYH-JH-DL8"/>
+                <constraint firstAttribute="trailing" secondItem="Fea-fT-cxY" secondAttribute="trailing" constant="27" id="kU3-8V-Iqi"/>
+                <constraint firstItem="Nyu-wM-r4k" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="s5d-lM-lNX"/>
+                <constraint firstAttribute="bottom" secondItem="Fea-fT-cxY" secondAttribute="bottom" constant="32" id="wXt-I2-fCZ"/>
+            </constraints>
+            <point key="canvasLocation" x="131" y="-12"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="btn_color">
+            <color red="0.2627450980392157" green="0.51764705882352946" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

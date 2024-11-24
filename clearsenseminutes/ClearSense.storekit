@@ -1,0 +1,121 @@
+{
+  "identifier" : "CCF21E94",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6471646046",
+    "_developerTeamID" : "ZYDXLB884Z",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 727946619.03845596,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21415766",
+      "localizations" : [
+
+      ],
+      "name" : "level 1",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "2.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6472990629",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "ClearSenseLevel1Opt1",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "ClearSense Monthly Subscription",
+          "subscriptionGroupID" : "21415766",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "24.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6476653846",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "ClearSenseLevel1Opt2",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "ClearSense Yearly Subscription",
+          "subscriptionGroupID" : "21415766",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

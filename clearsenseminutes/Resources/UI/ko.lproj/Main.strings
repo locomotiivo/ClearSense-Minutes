@@ -1,0 +1,222 @@
+
+/* Class = "UIButton"; configuration.title = "Flat"; ObjectID = "1ku-hT-Abm"; */
+"1ku-hT-Abm.configuration.title" = "Flat";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1ku-hT-Abm"; */
+"1ku-hT-Abm.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "2OB-lp-wxO"; */
+"2OB-lp-wxO.text" = "Loading...";
+
+/* Class = "UILabel"; text = "8K"; ObjectID = "2iO-eb-WBf"; */
+"2iO-eb-WBf.text" = "8K";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "3EA-Ta-xyJ"; */
+"3EA-Ta-xyJ.text" = "asdf";
+
+/* Class = "UILabel"; text = "Preset"; ObjectID = "3cJ-ok-7tF"; */
+"3cJ-ok-7tF.text" = "Preset";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "3cw-3n-QlI"; */
+"3cw-3n-QlI.text" = "asdf";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "3fz-xa-yjC"; */
+"3fz-xa-yjC.text" = "asdf";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "488-zj-iiw"; */
+"488-zj-iiw.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6DU-Pt-bcs"; */
+"6DU-Pt-bcs.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "125"; ObjectID = "7kr-Sn-HSt"; */
+"7kr-Sn-HSt.text" = "125";
+
+/* Class = "UILabel"; text = "4K"; ObjectID = "8SK-Zm-66v"; */
+"8SK-Zm-66v.text" = "4K";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8f5-uv-Yak"; */
+"8f5-uv-Yak.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Output"; ObjectID = "Cax-U7-6Y9"; */
+"Cax-U7-6Y9.text" = "Output";
+
+/* Class = "UILabel"; text = "1K"; ObjectID = "DeB-zg-khZ"; */
+"DeB-zg-khZ.text" = "1K";
+
+/* Class = "UILabel"; text = "https://github.com/michaeltyson/TPCircularBuffer"; ObjectID = "DsS-OO-m65"; */
+"DsS-OO-m65.text" = "https://github.com/michaeltyson/TPCircularBuffer";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "F2I-Wm-x0r"; */
+"F2I-Wm-x0r.text" = "0";
+
+/* Class = "UILabel"; text = "12dB"; ObjectID = "Hbn-Ds-AiQ"; */
+"Hbn-Ds-AiQ.text" = "12dB";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "Hee-J0-2OX"; */
+"Hee-J0-2OX.text" = "asdf";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "HsS-HO-sPU"; */
+"HsS-HO-sPU.text" = "asdf";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "Jy2-uq-kqU"; */
+"Jy2-uq-kqU.text" = "asdf";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "K0a-Xz-C9l"; */
+"K0a-Xz-C9l.text" = "asdf";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Kdu-vo-eZy"; */
+"Kdu-vo-eZy.text" = "Label";
+
+/* Class = "UILabel"; text = "+00"; ObjectID = "Lmd-BL-2in"; */
+"Lmd-BL-2in.text" = "+00";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "Mxy-c5-vtJ"; */
+"Mxy-c5-vtJ.text" = "asdf";
+
+/* Class = "UILabel"; text = "+00"; ObjectID = "NIa-Ao-3Vy"; */
+"NIa-Ao-3Vy.text" = "+00";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "PHS-qH-Dco"; */
+"PHS-qH-Dco.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "PLg-yM-YmE"; */
+"PLg-yM-YmE.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Voice"; ObjectID = "PqX-MY-w6I"; */
+"PqX-MY-w6I.configuration.title" = "Voice";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "PqX-MY-w6I"; */
+"PqX-MY-w6I.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "S7N-Z8-VQO"; */
+"S7N-Z8-VQO.text" = "asdf";
+
+/* Class = "UILabel"; text = "+00"; ObjectID = "Spc-TW-4Y7"; */
+"Spc-TW-4Y7.text" = "+00";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "TUy-2B-7nT"; */
+"TUy-2B-7nT.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "TUy-2B-7nT"; */
+"TUy-2B-7nT.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "WNd-dt-uFg"; */
+"WNd-dt-uFg.text" = "asdf";
+
+/* Class = "UILabel"; text = "test"; ObjectID = "WZB-G5-MVM"; */
+"WZB-G5-MVM.text" = "test";
+
+/* Class = "UILabel"; text = "250"; ObjectID = "Y1O-Me-yTg"; */
+"Y1O-Me-yTg.text" = "250";
+
+/* Class = "UILabel"; text = "+00"; ObjectID = "Y8s-2A-rMz"; */
+"Y8s-2A-rMz.text" = "+00";
+
+/* Class = "UILabel"; text = "+00"; ObjectID = "a3e-Fy-9R0"; */
+"a3e-Fy-9R0.text" = "+00";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bXN-JC-erV"; */
+"bXN-JC-erV.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "62.5"; ObjectID = "c6h-jh-OCO"; */
+"c6h-jh-OCO.text" = "62.5";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "d0G-xx-aTV"; */
+"d0G-xx-aTV.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "d0G-xx-aTV"; */
+"d0G-xx-aTV.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Voice"; ObjectID = "dAJ-Wk-9OA"; */
+"dAJ-Wk-9OA.configuration.title" = "Voice";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dAJ-Wk-9OA"; */
+"dAJ-Wk-9OA.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "dJq-Dp-Cro"; */
+"dJq-Dp-Cro.text" = "Loading...";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "ehr-7a-AOa"; */
+"ehr-7a-AOa.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ehr-7a-AOa"; */
+"ehr-7a-AOa.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ffY-a7-xem"; */
+"ffY-a7-xem.text" = "Label";
+
+/* Class = "UILabel"; text = "https://github.com/kaishin/Gifu"; ObjectID = "guC-GS-nO9"; */
+"guC-GS-nO9.text" = "https://github.com/kaishin/Gifu";
+
+/* Class = "UILabel"; text = "https://github.com/RevenueCat"; ObjectID = "hhW-8I-Lav"; */
+"hhW-8I-Lav.text" = "https://github.com/RevenueCat";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "ivg-VC-0BC"; */
+"ivg-VC-0BC.text" = "asdf";
+
+/* Class = "UILabel"; text = "-12dB"; ObjectID = "j6Y-34-4at"; */
+"j6Y-34-4at.text" = "-12dB";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "jWD-wE-uqv"; */
+"jWD-wE-uqv.text" = "asdf";
+
+/* Class = "UILabel"; text = "g"; ObjectID = "kJo-QJ-h6Q"; */
+"kJo-QJ-h6Q.text" = "g";
+
+/* Class = "UILabel"; text = "test"; ObjectID = "kSk-pU-bO1"; */
+"kSk-pU-bO1.text" = "test";
+
+/* Class = "UILabel"; text = "+00"; ObjectID = "kZw-s7-ub1"; */
+"kZw-s7-ub1.text" = "+00";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "kcm-Mu-eUY"; */
+"kcm-Mu-eUY.text" = "asdf";
+
+/* Class = "UILabel"; text = "+00"; ObjectID = "lbE-VJ-o86"; */
+"lbE-VJ-o86.text" = "+00";
+
+/* Class = "UILabel"; text = "500"; ObjectID = "ldO-vK-Wd6"; */
+"ldO-vK-Wd6.text" = "500";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "mVC-dh-Nlh"; */
+"mVC-dh-Nlh.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mVC-dh-Nlh"; */
+"mVC-dh-Nlh.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Amp"; ObjectID = "oPa-Bp-6kE"; */
+"oPa-Bp-6kE.text" = "Amp";
+
+/* Class = "UILabel"; text = "https://github.com/microsoft/onnxruntime"; ObjectID = "pRN-b5-ZCw"; */
+"pRN-b5-ZCw.text" = "https://github.com/microsoft/onnxruntime";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "pzb-of-V5V"; */
+"pzb-of-V5V.text" = "asdf";
+
+/* Class = "UILabel"; text = "https://github.com/AssistoLab/DropDown"; ObjectID = "raM-kF-wri"; */
+"raM-kF-wri.text" = "https://github.com/AssistoLab/DropDown";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "s7M-Bu-nNV"; */
+"s7M-Bu-nNV.text" = "asdf";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tmC-iH-DQ2"; */
+"tmC-iH-DQ2.text" = "Label";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "vkY-pq-61y"; */
+"vkY-pq-61y.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vkY-pq-61y"; */
+"vkY-pq-61y.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "2K"; ObjectID = "wdG-zH-QcO"; */
+"wdG-zH-QcO.text" = "2K";
+
+/* Class = "UILabel"; text = "test"; ObjectID = "weR-W0-VJj"; */
+"weR-W0-VJj.text" = "test";
+
+/* Class = "UILabel"; text = "+00"; ObjectID = "ylK-3a-ROn"; */
+"ylK-3a-ROn.text" = "+00";
+
+/* Class = "UILabel"; text = "asdf"; ObjectID = "zoK-nP-iJp"; */
+"zoK-nP-iJp.text" = "asdf";

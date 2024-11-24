@@ -1,0 +1,225 @@
+/* 
+  Localizable.strings
+  clearsenseminutes
+
+  Created by KooBH on 1/4/24.
+  
+*/
+
+"NSMicrophoneUsageDescription" = "이 어플은 휴대폰의 마이크 신호를 받아서 여러분께 향상된 신호를 전달합니다.";
+"NSSpeechRecognitionUsageDescription" = "이 어플은 휴대폰의 마이크 신호를 받아서 여러분께 향상된 신호를 전달합니다.";
+
+"SUCCESS" = "성공";
+"SUCCESS_MSG" = "성공적으로 처리하였습니다.";
+"ERROR" = "오류";
+
+"CLEARSENSE_PRO" = "클리어센스 구독";
+"DAY" = "일";
+"WEEK" = "주";
+"MONTH" = "개월";
+"YEAR" = "년";
+"FREE_TRIAL" = "무료체험";
+"UNLOCKS" = "클리어센스 구독";
+"SUBSCRIPTION_DESC0" = "클리어센스 오디오로 깨끗한 소리를 들으세요!\n월 3900원으로 누리는 편리한 소통";
+"SUBSCRIPTION_DESC1" = "iTunes 계정에 등록된 카드를 통해 비용이 첨구됩니다. 현재 구독이 만료되기 최소 24시간 전에 취소하지 않으면 구독이 자동으로 갱신됩니다. 활성화된 구독은 취소할 수 없습니다. 계정 설정에서 구독을 관리할 수 있습니다.";
+"RESTORE" = "구매 복원";
+"TOS" = "이용약관";
+"PRIVACY" = "개인정보보호정책";
+
+"AUTO_OFF" = "다시 보지 않기";
+"ADVANCED_SETTINGS" = "고급 설정";
+"ROUTE_CHANGE_HEADER" = "출력 디바이스 변경";
+"ROUTE_CHANGE_MSG" = "헤드셋이 연결되었습니다: ";
+"ROUTE_CHANGE_ERR" = "연결된 헤드셋이 없습니다.";
+"ROUTE_CHANGE_RECOMMEND" = "헤드셋을 연결하고 다시 시도해주세요.";
+
+"EQUALIZER" = "이퀄라이저";
+"FLAT" = "초기화";
+"INPUT_POPUP_HEADER" = "입력을 선택하세요";
+"OUTPUT_POPUP_HEADER" = "출력을 선택하세요";
+"LATENCY_LABEL" = "레이턴시 설정";
+"LATENCY_0" = "낮음";
+"LATENCY_1" = "일반";
+"SP_OPT_LABEL" = "방향성 설정";
+"SP_OPT_0" = "정적";
+"SP_OPT_1" = "동적";
+"TITLE" = "클리어센스 오디오";
+"VOICE" = "음성";
+
+
+"AGC_NOT_LABEL" = "기본 모드";
+"AGC_LABEL" = "크게 듣기";
+"BYPASS_NOT_LABEL" = "목소리만 듣기";
+"BYPASS_LABEL" = "주변 소리 듣기";
+"PURCHASE_HEADER" = "구독 관리";
+"RELOAD" = "구매내역 새로고침";
+"DEL_SUCCESS" = "성공적으로 삭제하였습니다";
+"DEL_CANCEL" = "삭제를 취소하였습니다";
+"DELETE_CONFIRM" = "선택하신 파일을 삭제하시겠습니까?";
+"PURCHASED" = "구매 완료";
+"UNAVAILABLE" = "구매 불가";
+"BUY" = "구매";
+"OK" = "예";
+"YES" = "예";
+"NO" = "아니오";
+"CANCEL" = "취소";
+"RELOADED" = "구매내역을 새로고침하였습니다";
+"ERR_000" = "알 수 없는 오류가 발생하였습니다";
+"ERR_100_%@_%d" = "%@ 파일을 재생하는 중 오류가 발생하였습니다";
+"ERR_101_%@_%d" = "%@ 파일을 공유하는 중 오류가 발생하였습니다";
+"ERR_102_%@_%d" = "%@ 파일을 삭제하는 중 오류가 발생하였습니다";
+"ERR_200" = "새로고침할 행을 찾지 못했습니다";
+"ERR_300" = "프리셋은 3개까지 생성 가능합니다.";
+
+"BACK" = "뒤로가기";
+"LICENSE_TITLE" = "정보";
+"LICENSE_SUBTITLE" = "클리어 센스 오디오 V0.0.0.";
+"LICENSE_TEXT" =
+"저희 프로그램은 아래 제3자 소프트웨어를 사용합니다.\n
+아래 이름을 클릭하여 각 소프트웨어의 라이센스를 확인하실 수 있습니다.";
+"INPUT" = "입력";
+"OUTPUT" = "출력";
+"SETTINGS" = "설정";
+"FILE_MANAGER" = "저장된 파일";
+"LANGUAGE_POPUP_HEADER" = "언어를 선택하세요";
+
+/* Subscription */
+"SUBSCRIPTION" = "구독";
+"OPTION_TITLE" = "옵션";
+"OPTION_N" = "비활성화";
+"OPTION_M" = "월간구독";
+"OPTION_Y" = "연간구독";
+"DATE_TITLE" = "기간";
+"CLOSE" = "확인";
+"SUB_MSG_BETA" = "체험기간 입니다!";
+
+"LANGUAGE" = "언어";
+"LANGUAGE_SELECT" = "언어선택";
+"LANGUAGE_ko" = "한국어";
+"LANGUAGE_jp" = "일본어";
+"LANGUAGE_en" = "영어";
+"APPLY" = "적용";
+
+"SHARE" = "공유";
+"EDIT" = "이름변경";
+"DELETE" = "삭제";
+"ALL" = "전체선택";
+
+"SHARE_SUCCESS" = "공유 성공했습니다";
+"EDITABLE_ONLY_ONE" = "한번에 하나의 파일만 이름변경할 수 있습니다";
+"ATLEAST_FAILURE" = "적어도 한 개 이상을 선택해야합니다";
+
+"NOISE_FLOOR_SLIDER" = "주변소리 남기기";
+
+"LOGO" = "logo_kr";
+
+"MANUAL" = "도움말";
+"MODEL_SELECT" = "모델 선택";
+"LOW_LATENCY" = "낮은 지연";
+"AUDIO_SETTING" = "오디오 설정";
+"COMPATIBILITY" = "호환성";
+"DIRECTION_SENSE" = "방향 감지";
+"SIZE_CONTROL" = "크기 조절";
+"LATENCY_CONTROL" = "지연 조절";
+
+"CONTACT" = "고객문의";
+
+"TERMS_OF_USE" = "이용약관";
+"PRIVACY_POLICY" = "개인정보처리방침";
+
+"URL_TOS" = "https://clearsenseaudio.com/kr/bbs/content.php?co_id=provision";
+"URL_PRIVACY" = "https://clearsenseaudio.com/kr/bbs/content.php?co_id=privacy";
+
+"ONBOARDING_LANGUAGE1" = "ko_onboarding1";
+"ONBOARDING_LANGUAGE2" = "ko_onboarding2";
+"ONBOARDING_LANGUAGE3" = "ko_onboarding3";
+"ONBOARDING_LANGUAGE4" = "ko_onboarding4";
+
+"SKIP" = "건너뛰기";
+
+"SELECTED" = "개 선택됨";
+
+"GUIDE" = "사용가이드";
+
+"NOTICE" = "알림";
+"NOTICE_CONTENT" = "체험판이 끝났어요, 앱스토어로 이동하여 업데이트 부탁해요!";
+"NOTICE_UPDATE" = "앱 버전이 필수 버전보다 낮습니다. 앱스토어로 이동합니다.";
+
+"NOFILE" = "저장된 파일이 없어요!";
+
+"DONOT_SHOW_AGAIN" = "다시 보지 않기";
+
+/* Common */
+"DEFAULT" = "기본값";
+"RESET" = "되돌리기";
+
+/* Manual */
+"MANUAL_HTML" = "manual_kr";
+"MANUAL_PERSONAL" = "personalization_kr";
+
+/* Personalization */
+"PERSONALIZATION" = "개인화";
+"PERSONAL_MSG_1" = "대역별로 들리는 크기가 비슷하도록 슬라이더를 조절해주세요";
+"PERSONAL_MSG_RESET" = "양쪽 귀의 값 모두 되돌리기 되었습니다";
+"PERSONAL_MSG_DEFAULT" = "양쪽 귀의 값 모두 0으로 설정되었습니다";
+"HEAR_ON" = "들어보기";
+"HEAR_OFF" = "그만듣기";
+"MIRROR" = "반대쪽 귀도 같게";
+"MIRROR_MSG_LEFT" = "동일한 설정을 오른쪽 귀에 적용합니다";
+"MIRROR_MSG_RIGHT" = "동일한 설정을 왼쪽 귀에 적용합니다";
+"EAR_LEFT" = "왼쪽 귀";
+"EAR_RIGHT" = "오른쪽 귀";
+"CURRENT_FREQ" = "현재 선택 주파수 : ";
+
+/* Equalizer Personalization Preset */
+"EQ_PERSONER_PRESET" = "이퀄라이저 - 개인화 프리셋";
+"PRESET" = "프리셋";
+"BOTH_EQUAL" = "양쪽 같게";
+"USING_DEVICE" = "사용기기";
+"ALL_RETEST" = "전체 재검사";
+"DETAIL_TUNING" = "상세 튜닝";
+"WANT_REMOVE_PRESET" = "현재 선택된 프리셋을 삭제하시겠습니까?";
+
+/* Detail Tuning */
+"DETAIL_TUNING" = "상세 튜닝";
+"LEFT_RIGHT_EAR" = "<왼쪽/오른쪽>쪽 귀";
+"CURRENT_FREQUENCY" = "현재 설정 주파수";
+"RETEST" = "재검사";
+"SAME_OTHER_EARS" = "반대쪽 귀와 같게";
+
+/* Simple Hearing Test */
+"SIMPLE_HEARING_TEST" = "간이 청력 검사";
+"DO_LATER" = "나중에 할래요";
+"LEFT" = "왼쪽";
+"RIGHT" = "오른쪽";
+"DONT_KNOW" = "모르겠어요";
+"SELECT_EAR" = "선택한 귀";
+"NEXT" = "다음";
+"START" = "시작";
+"DONT_KNOW_RUDELY" = "모르겠다";
+"RETRY" = "다시하기";
+"WANT_SAME" = "같게 할래요";
+"COMPLETE" = "완료";
+"OVERWRITE" = "덮어쓰기";
+/* Step1 */
+"STEP_1_1_TEXT" = "맞춤 기능을 위해서\n간이 청력 검사를 진행하겠습니다.";
+"STEP_1_1_DESC_1" = "해당 검사는 의학적 효력이 없습니다.";
+"STEP_1_1_DESC_2" = "조용한 환경에서 진행해주세요.";
+"STEP_1_1_DESC_3" = "언제든지 다시 검사를 진행할 수 있습니다. ";
+"STEP_1_2_TEXT" = "평소에 상대방의\n목소리를 듣는데\n어려움을 느끼나요?";
+"STEP_1_3_TEXT" = "개인화 소리조절을\n하지 않고\n넘어가시겠습니까?";
+/* Step2 */
+"STEP_2_1_TEXT" = "전화 시 어떤 귀를\n주로 사용하나요?";
+"STEP_2_2_TEXT" = "에만\n이어폰을 착용하고\n들어주세요.";
+"STEP_2_3_TEXT" = "들을 수 있는\n가장 작은 볼륨으로\n설정해주세요";
+/* Step3 */
+"STEP_3_1_TEXT" = "소리가 몇 번\n들리는지 기억해주세요";
+"STEP_3_2_TEXT" = "소리가 몇 번 들리셨나요?";
+"STEP_3_3_TEXT" = "세밀한 조절을 위해서\n조금만 더 측정하겠습니다.\n소리가 몇 번\n들리는지 기억해주세요.";
+"STEP_3_4_TOP" = "\n측정이 완료 되었습니다.";
+"STEP_3_4_BOTTOM" = "도\n진행하시겠습니까?";
+/* Step4 */
+"STEP_4_1_TEXT" = "검사가 완료되었습니다.";
+
+/* Advanced Settings */
+"ADVANCED" = "고급 설정";

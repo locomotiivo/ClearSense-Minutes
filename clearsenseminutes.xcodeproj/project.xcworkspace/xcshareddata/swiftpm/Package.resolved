@@ -1,0 +1,42 @@
+{
+  "originHash" : "71c395fb5c28dd647236b259dc328015628c52df8514fff5fb932c91e4098260",
+  "pins" : [
+    {
+      "identity" : "dropdown",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AssistoLab/DropDown",
+      "state" : {
+        "branch" : "master",
+        "revision" : "2ab6f6ce19f0117d1a76ea043ef8f57722c65d16"
+      }
+    },
+    {
+      "identity" : "gifu",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kaishin/Gifu",
+      "state" : {
+        "branch" : "master",
+        "revision" : "639e40d5dbd86dfa94fc61296c270b49af6f8a2a"
+      }
+    },
+    {
+      "identity" : "lottie-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-spm.git",
+      "state" : {
+        "revision" : "b842598f1295f3ffa1475b1580672d1fe5b83580",
+        "version" : "4.5.0"
+      }
+    },
+    {
+      "identity" : "tpcircularbuffer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/michaeltyson/TPCircularBuffer",
+      "state" : {
+        "revision" : "8833b3a73fab6530cc51e2063a85cced01714cfb",
+        "version" : "1.6.2"
+      }
+    }
+  ],
+  "version" : 3
+}
