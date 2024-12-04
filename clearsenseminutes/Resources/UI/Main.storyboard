@@ -108,9 +108,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWj-m5-InP" userLabel="center box">
                                 <rect key="frame" x="0.0" y="317" width="393" height="423"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PXM-F7-H3X">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PXM-F7-H3X" customClass="MPTextView" customModule="ClearSense" customModuleProvider="target">
                                         <rect key="frame" x="25" y="15" width="343" height="383"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -123,11 +123,30 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                     </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOc-Ak-886" customClass="MPTextView" customModule="ClearSense" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="25" width="343" height="373"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="BEGIN!">
+                                                <attributes>
+                                                    <color key="NSColor" systemColor="labelColor"/>
+                                                    <font key="NSFont" size="48" name="PretendardGOVVariable-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="PXM-F7-H3X" secondAttribute="trailing" constant="25" id="4IJ-kz-pw6"/>
+                                    <constraint firstItem="EOc-Ak-886" firstAttribute="top" secondItem="bWj-m5-InP" secondAttribute="top" constant="25" id="4gi-Nw-q5L"/>
                                     <constraint firstItem="PXM-F7-H3X" firstAttribute="top" secondItem="bWj-m5-InP" secondAttribute="top" constant="15" id="6WV-rj-JCs"/>
+                                    <constraint firstAttribute="trailing" secondItem="EOc-Ak-886" secondAttribute="trailing" constant="25" id="Bmv-SX-Sqm"/>
+                                    <constraint firstItem="EOc-Ak-886" firstAttribute="leading" secondItem="bWj-m5-InP" secondAttribute="leading" constant="25" id="KJk-Z0-1IM"/>
+                                    <constraint firstAttribute="bottom" secondItem="EOc-Ak-886" secondAttribute="bottom" constant="25" id="n7m-EI-uNL"/>
                                     <constraint firstItem="PXM-F7-H3X" firstAttribute="leading" secondItem="bWj-m5-InP" secondAttribute="leading" constant="25" id="qIy-cj-VuD"/>
                                     <constraint firstAttribute="bottom" secondItem="PXM-F7-H3X" secondAttribute="bottom" constant="25" id="zCc-5B-08M"/>
                                 </constraints>
@@ -176,9 +195,11 @@
                     <connections>
                         <outlet property="bgView" destination="vVe-2J-LjN" id="b0q-zo-IcL"/>
                         <outlet property="companyLabel" destination="ffY-a7-xem" id="sbj-cm-Evh"/>
+                        <outlet property="emptyTextView" destination="EOc-Ak-886" id="UO6-iN-37z"/>
                         <outlet property="fileBtn" destination="Q4N-KR-nXf" id="u4X-ma-7Jd"/>
                         <outlet property="logoImg" destination="FPA-aJ-kcn" id="jxf-2b-ars"/>
                         <outlet property="micBtn" destination="XcK-HH-8QR" id="BF7-qv-NWl"/>
+                        <outlet property="minuteView" destination="PXM-F7-H3X" id="49z-aH-yj2"/>
                         <outlet property="settingBtn" destination="3zJ-UC-aig" id="Wfg-bg-xwd"/>
                     </connections>
                 </viewController>
@@ -961,10 +982,10 @@
             </objects>
             <point key="canvasLocation" x="-725" y="-27"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--SettingVC-->
         <scene sceneID="qfG-q6-H6i">
             <objects>
-                <viewController storyboardIdentifier="SettingVC" id="q5t-37-kuf" customClass="SettingViewController" customModule="ClearSense" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingVC" id="q5t-37-kuf" customClass="SettingVC" customModule="ClearSense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BJO-eb-l8m">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1211,7 +1232,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <attributes>
                                                     <color key="NSColor" systemColor="labelColor"/>
                                                     <font key="NSFont" size="16" name="PretendardGOVVariable-Regular"/>
@@ -1255,6 +1276,11 @@
             <point key="canvasLocation" x="21" y="1399"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="EOc-Ak-886">
+            <size key="intrinsicContentSize" width="168" height="73.333333333333329"/>
+        </designable>
+    </designables>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
         <image name="doc.text" catalog="system" width="115" height="128"/>
@@ -1294,7 +1320,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tableCellBlueTextColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.039215686274509803" green="0.51764705882352946" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableCellGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

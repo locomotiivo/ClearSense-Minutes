@@ -123,3 +123,47 @@ class LanguageLogo: UIImageView {
     }
 }
 
+@IBDesignable open class MPTextView : UITextView {
+    @IBInspectable open var top: CGFloat = 15 {
+        didSet {
+            refresh()
+        }
+    }
+    
+    @IBInspectable open var bottom: CGFloat = 15 {
+        didSet {
+            refresh()
+        }
+    }
+    
+    @IBInspectable open var left: CGFloat = 15 {
+        didSet {
+            refresh()
+        }
+    }
+    
+    @IBInspectable open var right: CGFloat = 15 {
+        didSet {
+            refresh()
+        }
+    }
+    
+    required override public init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
+        refresh()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        refresh()
+    }
+    
+    func refresh() {
+        textContainerInset = UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
+    }
+    
+    func centerVerticalText() {
+        var topCorrect = (self.bounds.size.height - self.contentSize.height * self.zoomScale) / 2
+        top = topCorrect < 0.0 ? 0.0 : topCorrect
+    }
+ }
