@@ -30,14 +30,13 @@ class MainViewController: UIViewController {
     var avPlayer: AVPlayer!
     var avPlayerLayer: AVPlayerLayer!
     
-    // 볼륨 관련 변수
-    var timer: Timer?
-    
     var container: NSPersistentContainer!
 //    var didShowNotice: Bool = false         // 공지사항은 앱 킬때, 한번만
     var isHeadphoneConnected: Bool = false  // 헤드폰 연결 여부
     var isBackground: Bool = false          // 백그라운드 상태인지 여부
-    var analyticsStartTime: Date?           // GA에 사용하는 변수
+    
+    @IBOutlet weak var emptyTextView: MPTextView!
+    @IBOutlet weak var minuteView: MPTextView!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -86,8 +85,6 @@ class MainViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: AVAudioSession.interruptionNotification, object: AVAudioSession.sharedInstance())
         NotificationCenter.default.removeObserver(self, name: AVAudioSession.routeChangeNotification, object: nil)
-        
-        timer?.invalidate()
     }
     
     deinit {
@@ -122,6 +119,11 @@ class MainViewController: UIViewController {
         // 회사 이름 라벨
         companyLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openLicenseVC)))
         companyLabel.isUserInteractionEnabled = true
+        
+        // Initial Text View
+        minuteView.centerVerticalText()
+        minuteView.isHidden = true
+        emptyTextView.isHidden = false
     }
     
     // 도큐먼트 디렉토리 내에 mpWAV 하위 디렉토리 생성
@@ -148,11 +150,9 @@ class MainViewController: UIViewController {
     @IBAction func onClickMic(_ sender: UIButton) {
         if audioEngine.isRunning {
             togglePlayback(false)
-            setAnalysticsTimer(start: false)
         } else {
             if isPro {
                 togglePlayback(true)
-                setAnalysticsTimer(start: true)
             } else {
                 openPaywallVC()
             }
@@ -170,10 +170,15 @@ class MainViewController: UIViewController {
     private func togglePlayback(_ flag: Bool) {
         if flag {
             // 재생
-            guard isHeadphoneConnected else {
-                Alert("ROUTE_CHANGE_HEADER".localized(), "ROUTE_CHANGE_ERR".localized() + "ROUTE_CHANGE_RECOMMEND".localized(), nil)
-                return
-            }
+//            guard isHeadphoneConnected else {
+//                Alert("ROUTE_CHANGE_HEADER".localized(), "ROUTE_CHANGE_ERR".localized() + "ROUTE_CHANGE_RECOMMEND".localized(), nil)
+//                return
+//            }
+            
+            // Text View
+            minuteView.isHidden = false
+            emptyTextView.isHidden = true
+            minuteView.text = ""
             
             micBtn.isSelected = true
             avPlayer.play()
@@ -188,6 +193,11 @@ class MainViewController: UIViewController {
             
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 audioEngine.stop_audio_unit()
+                
+                // Text View
+//                self.minuteView.isHidden = true
+//                self.emptyTextView.isHidden = false
+//                self.minuteView.text = ""
             }
         }
     }
@@ -252,35 +262,15 @@ class MainViewController: UIViewController {
             let flags = try container.viewContext.fetch(Flag.fetchRequest())
             if flags.count > 0 {
                 let flag = flags[0]
-                flag.bypass = audioEngine.isBypassing
-                flag.agc = audioEngine.isAGCEnabled
-                flag.record = audioEngine.isRecording
+//                flag.record = audioEngine.isRecording
             } else if let entity = NSEntityDescription.entity(forEntityName: "Flag", in: container.viewContext) {
                 let flag = NSManagedObject(entity: entity, insertInto: container.viewContext)
-                flag.setValue(audioEngine.isBypassing, forKey: "bypass")
-                flag.setValue(audioEngine.isAGCEnabled, forKey: "agc")
-                flag.setValue(audioEngine.isRecording, forKey: "record")
+//                flag.setValue(audioEngine.isRecording, forKey: "record")
             }
             try container.viewContext.save()
-            
-            os_log(.info, log: .audio, "%@", "bypass flag set to \(audioEngine.isBypassing)")
-            os_log(.info, log: .audio, "%@", "agc flag set to \(audioEngine.isAGCEnabled)")
-            os_log(.info, log: .audio, "%@", "record flag set to \(audioEngine.isRecording)")
+//            os_log(.info, log: .audio, "%@", "record flag set to \(audioEngine.isRecording)")
         } catch {
             os_log(.error, log: .system, "%@", "Error saving Core Data : \(error.localizedDescription)")
-        }
-    }
-    
-    // Firebase Analytics 기록
-    private func setAnalysticsTimer(start: Bool){
-        if start {
-            analyticsStartTime = Date()
-        } else {
-            guard let time = analyticsStartTime else { return }
-            let elapsedTime = Int(Date().timeIntervalSince(time)) // 초 단위로 변환
-            // Firebase Analytics에 이벤트 기록 (녹음 종료)
-            let msg = "elapsed time: \(NSNumber(value: elapsedTime))"
-            os_log(.info, log: .audio, "%@", msg)
         }
     }
     

@@ -96,7 +96,11 @@ class FilesVC: UIViewController {
         controlBtnViewHeight.isActive = true
         
         // 파일 데이터
-        fileList = FilesArray.loadData()
+        Task {
+            let data = try? await ConnectionManager.shared.DATAREQUEST("GET", [:])
+            print(data?.rawString() ?? "NO DATA")
+        }
+        
         checkFileIsEmpty()
     }
     

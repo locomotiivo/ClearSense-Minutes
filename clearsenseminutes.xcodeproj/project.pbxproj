@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		360A07912CEEFCC8003BBF35 /* API.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 360A07902CEEFCC7003BBF35 /* API.xcconfig */; };
 		360A07932CF33EE5003BBF35 /* MinuteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360A07922CF33EE5003BBF35 /* MinuteVC.swift */; };
+		360A07982CFD7733003BBF35 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 360A07972CFD7733003BBF35 /* SwiftyJSON */; };
 		36158CBA2B639339009D3DF4 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36158CB92B639339009D3DF4 /* IAPManager.swift */; };
 		36158CBD2B639576009D3DF4 /* ClearSense.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 36158CBC2B639576009D3DF4 /* ClearSense.storekit */; };
 		36158CBF2B6399FA009D3DF4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36158CBE2B6399FA009D3DF4 /* StoreKit.framework */; };
@@ -24,7 +25,7 @@
 		364582762BA2C677005D55AA /* PaywallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364582732BA2C677005D55AA /* PaywallVC.swift */; };
 		364582792BA40EAF005D55AA /* PackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364582782BA40EAE005D55AA /* PackageCell.swift */; };
 		364F0EB72C4784030026ECA2 /* PretendardGOVVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364F0EB62C4784030026ECA2 /* PretendardGOVVariable.ttf */; };
-		364F0EB92C4786DE0026ECA2 /* FilesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F0EB82C4786DE0026ECA2 /* FilesArray.swift */; };
+		364F0EB92C4786DE0026ECA2 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F0EB82C4786DE0026ECA2 /* ConnectionManager.swift */; };
 		366751372B7B5E7D00370944 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366751362B7B5E7D00370944 /* Products.swift */; };
 		3680725A2C4E3711000B9A28 /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 368072592C4E3711000B9A28 /* grid.png */; };
 		368182DD2C412D2900F01ACF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860E00032A8A0C2E00F4F224 /* MainViewController.swift */; };
@@ -195,7 +196,7 @@
 		364582732BA2C677005D55AA /* PaywallVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaywallVC.swift; sourceTree = "<group>"; };
 		364582782BA40EAE005D55AA /* PackageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageCell.swift; sourceTree = "<group>"; };
 		364F0EB62C4784030026ECA2 /* PretendardGOVVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardGOVVariable.ttf; sourceTree = "<group>"; };
-		364F0EB82C4786DE0026ECA2 /* FilesArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesArray.swift; sourceTree = "<group>"; };
+		364F0EB82C4786DE0026ECA2 /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		366751362B7B5E7D00370944 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		368072592C4E3711000B9A28 /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
 		368182F62C44E80E00F01ACF /* arrow_down_blk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down_blk.png; sourceTree = "<group>"; };
@@ -328,6 +329,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				360A07982CFD7733003BBF35 /* SwiftyJSON in Frameworks */,
 				36158CBF2B6399FA009D3DF4 /* StoreKit.framework in Frameworks */,
 				6C3BB9932CD095F3000BD641 /* Lottie in Frameworks */,
 				36E754262C4BB68F004CD2C1 /* DropDown in Frameworks */,
@@ -494,7 +496,7 @@
 			children = (
 				3620C1E12B83316B00DDEF15 /* FileRow.swift */,
 				36E5A85C2B83197A009F566E /* FilesVC.swift */,
-				364F0EB82C4786DE0026ECA2 /* FilesArray.swift */,
+				364F0EB82C4786DE0026ECA2 /* ConnectionManager.swift */,
 				951D24F72C58C59F00907C45 /* File.swift */,
 				BF164DC02C817F2900205035 /* EmptyFileView.swift */,
 			);
@@ -604,7 +606,6 @@
 				860E00012A8A0C2E00F4F224 /* SceneDelegate.swift */,
 				368712352BFC4A3900520FEC /* LoadingIndicator.swift */,
 				368712332BFC4A2900520FEC /* WebVC.swift */,
-				361B83EE2B45511F00538BE5 /* LanguageManager.swift */,
 				36158CC02B6A2320009D3DF4 /* VerticalSlider.swift */,
 				364582682BA2BB6F005D55AA /* LoadingVC.swift */,
 				860E00032A8A0C2E00F4F224 /* MainViewController.swift */,
@@ -685,6 +686,7 @@
 			children = (
 				364582662BA2B942005D55AA /* Constants+Extension.swift */,
 				BFA245B02C745F82007CEB4E /* MPVolumeView++.swift */,
+				361B83EE2B45511F00538BE5 /* LanguageManager.swift */,
 				BF164DDC2C857B5800205035 /* Utils++.swift */,
 			);
 			path = Extension;
@@ -713,6 +715,7 @@
 				368182EA2C4134BF00F01ACF /* Gifu */,
 				36E754252C4BB68F004CD2C1 /* DropDown */,
 				6C3BB9922CD095F3000BD641 /* Lottie */,
+				360A07972CFD7733003BBF35 /* SwiftyJSON */,
 			);
 			productName = backup_mpwav;
 			productReference = 860EFFFC2A8A0C2E00F4F224 /* ClearSense.app */;
@@ -749,6 +752,7 @@
 				368182E92C4134BF00F01ACF /* XCRemoteSwiftPackageReference "Gifu" */,
 				36E754242C4BB68E004CD2C1 /* XCRemoteSwiftPackageReference "DropDown" */,
 				6C3BB9912CD095F3000BD641 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				360A07962CFD7733003BBF35 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 860EFFFD2A8A0C2E00F4F224 /* Products */;
 			projectDirPath = "";
@@ -903,7 +907,7 @@
 				6CDDC7612CD33B13001E44E4 /* CSSlider.swift in Sources */,
 				BF164D8D2C7EE56300205035 /* PageContentsViewController.swift in Sources */,
 				860E00002A8A0C2E00F4F224 /* AppDelegate.swift in Sources */,
-				364F0EB92C4786DE0026ECA2 /* FilesArray.swift in Sources */,
+				364F0EB92C4786DE0026ECA2 /* ConnectionManager.swift in Sources */,
 				860E00022A8A0C2E00F4F224 /* SceneDelegate.swift in Sources */,
 				36F5618C2C9C033B00E7EDBF /* HearingTestManager.swift in Sources */,
 				36E754282C4BB7E7004CD2C1 /* LicenseVC.swift in Sources */,
@@ -1190,6 +1194,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		360A07962CFD7733003BBF35 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 		361B83FE2B4640DD00538BE5 /* XCRemoteSwiftPackageReference "TPCircularBuffer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/michaeltyson/TPCircularBuffer";
@@ -1225,6 +1237,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		360A07972CFD7733003BBF35 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 360A07962CFD7733003BBF35 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		361B83FF2B4640DD00538BE5 /* TPCircularBuffer */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 361B83FE2B4640DD00538BE5 /* XCRemoteSwiftPackageReference "TPCircularBuffer" */;

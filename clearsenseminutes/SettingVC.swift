@@ -1,5 +1,5 @@
 //
-//  SettingViewController.swift
+//  SettingVC.swift
 //  clearsenseminutes
 //
 //  Created by HWANJUN YU on 10/30/24.

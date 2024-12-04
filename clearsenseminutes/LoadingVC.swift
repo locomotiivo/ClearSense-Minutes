@@ -17,6 +17,11 @@ class LoadingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        STTconn.connect()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setup()
     }
     
@@ -31,7 +36,7 @@ class LoadingVC: UIViewController {
 //                    if let err = err {
 //                        self.catchErr(err)
 //                    } else {
-                        self.showMainView()
+        self.showMainView()
 //                    }
 //                }
 //            }
