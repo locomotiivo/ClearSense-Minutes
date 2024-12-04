@@ -56,7 +56,10 @@ class AudioEngineManager : AURecordCallbackDelegate {
     static let shared = AudioEngineManager()
     private var mutex: pthread_mutex_t = pthread_mutex_t()
     
-    static let SAMPLE_RATE : Double = 16000
+    let SAMPLE_RATE : Double = 16000
+    let CHANNEL_MONO = 1
+    let CHANNEL_STEREO = 2
+
     var sampleRate : Double = 48000
     let samples : Double = 128
     let bytesPerBuffer = 256
@@ -141,8 +144,8 @@ class AudioEngineManager : AURecordCallbackDelegate {
         
         let audioObj = unsafeBitCast(inRefCon, to: AudioEngineManager.self)
         var err : OSStatus = noErr
-        let bufferList = AudioBufferList.allocate(maximumBuffers: 2)
-        for i in 0..<2 {
+        let bufferList = AudioBufferList.allocate(maximumBuffers: CHANNEL_MONO)
+        for i in 0..<CHANNEL_MONO {
             bufferList[i] = AudioBuffer(
                 mNumberChannels: 1
                 , mDataByteSize: UInt32(bytesPerBuffer)
@@ -157,23 +160,17 @@ class AudioEngineManager : AURecordCallbackDelegate {
                 inBusNumber,
                 inNumberFrames,
                 bufferList.unsafeMutablePointer
-//                &bufferList
-            )
-            
+=            )
     
             if err == noErr {
-                let neededBytes = 2 * bufferList[0].mDataByteSize
+                let neededBytes = CHANNEL_MONO * bufferList[0].mDataByteSize
                 var availableBytes: UInt32 = 0
                 let dstBuffer = TPCircularBufferHead(&rBufferIn, &availableBytes)
                 if (availableBytes >= neededBytes) {
-                    let dataL = UnsafeMutableRawPointer(bufferList[0].mData)
-                    let dataR = UnsafeMutableRawPointer(bufferList[1].mData)
-                    if let dptrL = dataL,
-                       let dptrR = dataR {
-                        let arrL = dptrL.assumingMemoryBound(to: Float32.self)
-                        let arrR = dptrR.assumingMemoryBound(to: Float32.self)
-                        memcpy((dstBuffer!), arrL, Int(bufferList[0].mDataByteSize))
-                        memcpy((dstBuffer! + bytesPerBuffer), arrR, Int(bufferList[0].mDataByteSize))
+                    let data = UnsafeMutableRawPointer(bufferList[0].mData)
+                    if let dptr = data {
+                        let arr = dptr.assumingMemoryBound(to: Float32.self)
+                        memcpy((dstBuffer!), arr, Int(bufferList[0].mDataByteSize))
                         TPCircularBufferProduce(&rBufferIn, UInt32(neededBytes))
                     }
                 }
@@ -206,6 +203,7 @@ class AudioEngineManager : AURecordCallbackDelegate {
         var turnOff: UInt32 = 0;
         let kInputBus: AudioUnitElement = 1
         let kOutputBus: AudioUnitElement = 0
+        let packetSize = MemoryLayout<UInt16>.size
         
         // MARK: enable Input
         err = AudioUnitSetProperty(audioUnit!,
@@ -215,27 +213,52 @@ class AudioEngineManager : AURecordCallbackDelegate {
                                    &turnOn,
                                    UInt32(MemoryLayout<UInt32>.size))
         
-        let channel = 2
-        let packetSize = MemoryLayout<UInt16>.size
-        var streamFormat = AudioStreamBasicDescription(
+        // MARK: Apply Input format
+        var streamFormatIn = AudioStreamBasicDescription(
             mSampleRate: sampleRate,
             mFormatID: kAudioFormatLinearPCM,
             mFormatFlags: kAudioFormatFlagIsPacked | kAudioFormatFlagIsSignedInteger, //kAudioFormatFlagsNativeFloatPacked | kLinearPCMFormatFlagIsNonInterleaved,
-            mBytesPerPacket: UInt32(channel * packetSize) ,  // Assuming each sample is 4 bytes for 32-bit float
+            mBytesPerPacket: UInt32(CHANNEL_STEREO * packetSize) ,  // Assuming each sample is 4 bytes for 32-bit float
             mFramesPerPacket: 1,           // For PCM, this should be 1
-            mBytesPerFrame: UInt32(channel * packetSize),   // Each frame will have 'channel' number of samples
-            mChannelsPerFrame: UInt32(channel),
+            mBytesPerFrame: UInt32(CHANNEL_STEREO * packetSize),   // Each frame will have 'channel' number of samples
+            mChannelsPerFrame: UInt32(CHANNEL_STEREO),
             mBitsPerChannel: UInt32(8 * packetSize),
             mReserved: 0)
 
-        // MARK: apply format
         err = AudioUnitSetProperty(audioUnit!,
                                    kAudioUnitProperty_StreamFormat,
                                    kAudioUnitScope_Input,
                                    kOutputBus,
-                                   &streamFormat,
+                                   &streamFormatIn,
                                    UInt32(MemoryLayout<AudioStreamBasicDescription>.size))
+        if err != noErr {
+            let messages = "Error setting up AU: \(err.description)"
+            os_log(.error, log: .audio, "%@", messages)
+        }
         
+        // MARK: Apply Output format
+        var streamFormatOut = AudioStreamBasicDescription(
+            mSampleRate: SAMPLE_RATE,
+            mFormatID: kAudioFormatLinearPCM,
+            mFormatFlags: kAudioFormatFlagIsPacked | kAudioFormatFlagIsSignedInteger, //kAudioFormatFlagsNativeFloatPacked | kLinearPCMFormatFlagIsNonInterleaved,
+            mBytesPerPacket: UInt32(CHANNEL_MONO * packetSize) ,  // Assuming each sample is 4 bytes for 32-bit float
+            mFramesPerPacket: 1,           // For PCM, this should be 1
+            mBytesPerFrame: UInt32(CHANNEL_MONO * packetSize),   // Each frame will have 'channel' number of samples
+            mChannelsPerFrame: UInt32(CHANNEL_MONO),
+            mBitsPerChannel: UInt32(8 * packetSize),
+            mReserved: 0)
+
+        err = AudioUnitSetProperty(audioUnit!,
+                                   kAudioUnitProperty_StreamFormat,
+                                   kAudioUnitScope_Output,
+                                   kOutputBus,
+                                   &streamFormatOut,
+                                   UInt32(MemoryLayout<AudioStreamBasicDescription>.size))
+        if err != noErr {
+            let messages = "Error setting up AU: \(err.description)"
+            os_log(.error, log: .audio, "%@", messages)
+        }
+
         err = AudioUnitSetProperty(audioUnit!,
                                    kAudioUnitProperty_ShouldAllocateBuffer,
                                    kAudioUnitScope_Output,
@@ -283,15 +306,14 @@ class AudioEngineManager : AURecordCallbackDelegate {
         
         sampleRate = sr
         let packetSize = MemoryLayout<UInt16>.size
-        let channel = 2
         var streamFormat = AudioStreamBasicDescription(
             mSampleRate: sr,
             mFormatID: kAudioFormatLinearPCM,
             mFormatFlags:  kAudioFormatFlagIsPacked | kAudioFormatFlagIsSignedInteger, //kAudioFormatFlagsNativeFloatPacked | kLinearPCMFormatFlagIsNonInterleaved,
-            mBytesPerPacket: UInt32(channel * packetSize),
+            mBytesPerPacket: UInt32(CHANNEL_STEREO * packetSize),
             mFramesPerPacket: 1,           // For PCM, this should be 1
-            mBytesPerFrame: UInt32(channel * packetSize),   // Each frame will have 'channel' number of samples
-            mChannelsPerFrame: UInt32(channel),
+            mBytesPerFrame: UInt32(CHANNEL_STEREO * packetSize),   // Each frame will have 'channel' number of samples
+            mChannelsPerFrame: UInt32(CHANNEL_STEREO),
             mBitsPerChannel: UInt32(8 * packetSize),
             mReserved: 0
         )
@@ -307,6 +329,29 @@ class AudioEngineManager : AURecordCallbackDelegate {
             os_log(.error, log: .audio, "%@", messages)
         }
         
+        // MARK: Apply Output format
+        var streamFormatOut = AudioStreamBasicDescription(
+            mSampleRate: SAMPLE_RATE,
+            mFormatID: kAudioFormatLinearPCM,
+            mFormatFlags: kAudioFormatFlagIsPacked | kAudioFormatFlagIsSignedInteger, //kAudioFormatFlagsNativeFloatPacked | kLinearPCMFormatFlagIsNonInterleaved,
+            mBytesPerPacket: UInt32(CHANNEL_MONO * packetSize) ,  // Assuming each sample is 4 bytes for 32-bit float
+            mFramesPerPacket: 1,           // For PCM, this should be 1
+            mBytesPerFrame: UInt32(CHANNEL_MONO * packetSize),   // Each frame will have 'channel' number of samples
+            mChannelsPerFrame: UInt32(CHANNEL_MONO),
+            mBitsPerChannel: UInt32(8 * packetSize),
+            mReserved: 0)
+
+        err = AudioUnitSetProperty(audioUnit!,
+                                   kAudioUnitProperty_StreamFormat,
+                                   kAudioUnitScope_Output,
+                                   kOutputBus,
+                                   &streamFormatOut,
+                                   UInt32(MemoryLayout<AudioStreamBasicDescription>.size))
+        if err != noErr {
+            let messages = "Error setting up AU: \(err.description)"
+            os_log(.error, log: .audio, "%@", messages)
+        }
+
         err = AudioUnitInitialize(audioUnit!)
         if err != noErr {
             let messages = "Error initializing AU: \(err.description)"
@@ -316,19 +361,16 @@ class AudioEngineManager : AURecordCallbackDelegate {
     
     
     @objc private func processData() {
-        let neededBytes : UInt32 = 2 * UInt32(bytesPerBuffer)
+        let neededBytes : UInt32 = CHANNEL_MONO * UInt32(bytesPerBuffer)
         var availableBytes : UInt32 = 0
         let srcBufferIn = TPCircularBufferTail(&rBufferIn, &availableBytes)
-        guard let ptrIn = srcBufferIn?.assumingMemoryBound(to: Float32.self) else {return}
+        guard let ptrIn = srcBufferIn?.assumingMemoryBound(to: Float32.self) else {
+            return
+        }
         
         if (availableBytes >= neededBytes) {
-            // begin TODO
             // TODO: send data to server
-            // end TODO
-            print("NEEDED[\(neededBytes)] / AVAILABLE[\(availableBytes)]")
-            var txt = ""
-            label_txt = txt
-            
+            STTconn.send()
             TPCircularBufferConsume(&rBufferIn, neededBytes)
         }
     }

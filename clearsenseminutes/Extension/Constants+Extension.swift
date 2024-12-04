@@ -17,7 +17,8 @@ var mpWAVURL = URL(string: NSSearchPathForDirectoriesInDomains(.documentDirector
 var isPro: Bool = false
 
 var audioEngine : AudioEngineManager = AudioEngineManager.shared
-var conn : ConnectionManager = ConnectionManager.shared
+var DBconn : DBConnectionManager = DBConnectionManager.shared
+var STTconn : STTConnectionManager = STTConnectionManager.shared
 
 extension UIViewController {
     var navBackBtn: UIBarButtonItem {
