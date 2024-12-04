@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -521,7 +520,6 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="onClickMinute:" destination="X4f-N8-xPH" eventType="touchUpInside" id="x9g-rv-ZvX"/>
-                                                        <action selector="onClickPlay:" destination="X4f-N8-xPH" eventType="touchUpInside" id="cPt-dd-gLJ"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vLh-eA-V5b">
@@ -542,9 +540,21 @@
                                                             <color key="textColor" systemColor="lightTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6b-Fb-cA7">
+                                                            <rect key="frame" x="140" y="20" width="35" height="17"/>
+                                                            <fontDescription key="fontDescription" name="PretendardGOVVariable-Regular" family="Pretendard GOV Variable" pointSize="14"/>
+                                                            <color key="textColor" systemColor="lightTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="488-zj-iiw">
                                                             <rect key="frame" x="265" y="20" width="30" height="14.333333333333336"/>
                                                             <fontDescription key="fontDescription" name="PretendardGOVVariable-Regular" family="Pretendard GOV Variable" pointSize="12"/>
+                                                            <color key="textColor" systemColor="lightTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYC-j7-ReF">
+                                                            <rect key="frame" x="35" y="20" width="35" height="17"/>
+                                                            <fontDescription key="fontDescription" name="PretendardGOVVariable-Regular" family="Pretendard GOV Variable" pointSize="14"/>
                                                             <color key="textColor" systemColor="lightTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -553,14 +563,29 @@
                                                     <constraints>
                                                         <constraint firstItem="tmC-iH-DQ2" firstAttribute="top" secondItem="Kdu-vo-eZy" secondAttribute="bottom" id="1YL-ET-IJG"/>
                                                         <constraint firstItem="488-zj-iiw" firstAttribute="top" secondItem="tmC-iH-DQ2" secondAttribute="top" id="4i7-sl-nBr"/>
+                                                        <constraint firstItem="EYC-j7-ReF" firstAttribute="leading" secondItem="tmC-iH-DQ2" secondAttribute="trailing" id="D8a-cN-bWo"/>
+                                                        <constraint firstAttribute="bottom" secondItem="EYC-j7-ReF" secondAttribute="bottom" id="DjI-Q9-NWS"/>
+                                                        <constraint firstItem="j6b-Fb-cA7" firstAttribute="top" secondItem="Kdu-vo-eZy" secondAttribute="bottom" id="Eqk-g5-7HO"/>
                                                         <constraint firstItem="Kdu-vo-eZy" firstAttribute="leading" secondItem="vLh-eA-V5b" secondAttribute="leading" id="Flq-md-0zN"/>
+                                                        <constraint firstItem="488-zj-iiw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tmC-iH-DQ2" secondAttribute="trailing" id="HkZ-Pi-QJi"/>
+                                                        <constraint firstItem="488-zj-iiw" firstAttribute="leading" secondItem="EYC-j7-ReF" secondAttribute="trailing" id="Mai-oT-uPv"/>
                                                         <constraint firstItem="Kdu-vo-eZy" firstAttribute="top" secondItem="vLh-eA-V5b" secondAttribute="top" id="PDT-MM-9sQ"/>
+                                                        <constraint firstItem="tmC-iH-DQ2" firstAttribute="width" secondItem="488-zj-iiw" secondAttribute="width" multiplier="1.16667" id="QNI-bI-mmM"/>
+                                                        <constraint firstItem="j6b-Fb-cA7" firstAttribute="leading" secondItem="tmC-iH-DQ2" secondAttribute="trailing" id="R9r-7n-IMb"/>
                                                         <constraint firstAttribute="trailing" secondItem="488-zj-iiw" secondAttribute="trailing" id="RsS-ns-7Zj"/>
+                                                        <constraint firstAttribute="bottom" secondItem="j6b-Fb-cA7" secondAttribute="bottom" id="TDi-19-tjp"/>
                                                         <constraint firstItem="tmC-iH-DQ2" firstAttribute="leading" secondItem="vLh-eA-V5b" secondAttribute="leading" id="Uay-6b-szB"/>
+                                                        <constraint firstItem="488-zj-iiw" firstAttribute="leading" secondItem="j6b-Fb-cA7" secondAttribute="trailing" id="Wod-OJ-Kng"/>
                                                         <constraint firstAttribute="trailing" secondItem="Kdu-vo-eZy" secondAttribute="trailing" id="a2D-Xq-vHB"/>
-                                                        <constraint firstItem="488-zj-iiw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tmC-iH-DQ2" secondAttribute="trailing" id="dot-ll-BPh"/>
                                                         <constraint firstAttribute="bottom" secondItem="tmC-iH-DQ2" secondAttribute="bottom" id="gvJ-E4-37M"/>
+                                                        <constraint firstItem="EYC-j7-ReF" firstAttribute="top" secondItem="Kdu-vo-eZy" secondAttribute="bottom" id="v4c-JZ-gE5"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="subviews">
+                                                            <exclude reference="j6b-Fb-cA7"/>
+                                                            <exclude reference="EYC-j7-ReF"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
                                             </subviews>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -575,10 +600,12 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="btn_play" destination="6DU-Pt-bcs" id="8Aw-A9-89h"/>
-                                            <outlet property="label_date" destination="488-zj-iiw" id="z8i-Ap-tv5"/>
-                                            <outlet property="label_length" destination="tmC-iH-DQ2" id="S1m-R6-Kpz"/>
-                                            <outlet property="label_name" destination="Kdu-vo-eZy" id="uii-P7-aeH"/>
+                                            <outlet property="btn_minute" destination="6DU-Pt-bcs" id="a3t-Cn-ldH"/>
+                                            <outlet property="label_company" destination="488-zj-iiw" id="c6I-Ke-Z6R"/>
+                                            <outlet property="label_date" destination="tmC-iH-DQ2" id="4ee-16-xi2"/>
+                                            <outlet property="label_id" destination="EYC-j7-ReF" id="bUk-7a-oJc"/>
+                                            <outlet property="label_text" destination="j6b-Fb-cA7" id="pFT-2N-Do2"/>
+                                            <outlet property="label_title" destination="Kdu-vo-eZy" id="SRM-Jk-knr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -589,67 +616,28 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpu-C9-Df2">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="75"/>
                                         <subviews>
-                                            <stackView contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="vby-uf-3eP">
+                                            <stackView contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vby-uf-3eP">
                                                 <rect key="frame" x="27" y="12.666666666666629" width="339" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLg-yM-YmE" customClass="LanguageButton" customModule="ClearSense" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="PLg-yM-YmE" secondAttribute="height" multiplier="1:1" id="fXg-YS-zfc"/>
-                                                            <constraint firstAttribute="height" constant="50" id="ksp-Wy-Xtw"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="PretendardGOVVariable-Regular" family="Pretendard GOV Variable" pointSize="11"/>
-                                                        <inset key="titleEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="-25"/>
-                                                        <inset key="imageEdgeInsets" minX="15" minY="-20" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="이름변경" image="ic_edit">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <state key="disabled">
-                                                            <color key="titleColor" name="btn_color_disable"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localized" value="EDIT"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="onClickEdit:" destination="X4f-N8-xPH" eventType="touchUpInside" id="rFV-4J-oLw"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXN-JC-erV" customClass="LanguageButton" customModule="ClearSense" customModuleProvider="target">
-                                                        <rect key="frame" x="144.66666666666666" y="0.0" width="50" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="HA6-Bp-ufq"/>
-                                                            <constraint firstAttribute="width" secondItem="bXN-JC-erV" secondAttribute="height" multiplier="1:1" id="Siu-jJ-PGb"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="PretendardGOVVariable-Regular" family="Pretendard GOV Variable" pointSize="11"/>
-                                                        <inset key="titleEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="-25"/>
-                                                        <inset key="imageEdgeInsets" minX="15" minY="-20" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="공유" image="ic_share">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="localized" value="SHARE"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="onClickShare:" destination="X4f-N8-xPH" eventType="touchUpInside" id="kci-Fy-zT7"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8f5-uv-Yak" customClass="LanguageButton" customModule="ClearSense" customModuleProvider="target">
-                                                        <rect key="frame" x="289" y="0.0" width="50" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="5yb-W4-4dz"/>
-                                                            <constraint firstAttribute="width" secondItem="8f5-uv-Yak" secondAttribute="height" multiplier="1:1" id="9Oq-oB-gzx"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="PretendardGOVVariable-Regular" family="Pretendard GOV Variable" pointSize="11"/>
-                                                        <inset key="titleEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="-25"/>
-                                                        <inset key="imageEdgeInsets" minX="15" minY="-20" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="삭제" image="ic_trash">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sp8-sP-iLa" customClass="LanguageButton" customModule="ClearSense" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="339" height="50"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="top" imagePadding="5">
+                                                            <imageReference key="image" image="trash" catalog="system" symbolScale="default"/>
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="Delete">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="PretendardGOVVariable-Bold"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localized" value="DELETE"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="onClickDelete:" destination="X4f-N8-xPH" eventType="touchUpInside" id="ych-mg-Or1"/>
+                                                            <action selector="onClickDelete:" destination="X4f-N8-xPH" eventType="touchUpInside" id="qIu-M9-gnq"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1215,8 +1203,8 @@
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMX-Iu-hph">
                                 <rect key="frame" x="10" y="64" width="373" height="749"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0N-j8-Fwt">
-                                        <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0N-j8-Fwt" customClass="LanguageButton" customModule="ClearSense" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1ho-lN-g1b"/>
                                             <constraint firstAttribute="width" constant="50" id="CN1-1g-Oez"/>
@@ -1227,8 +1215,8 @@
                                             <action selector="onClose:" destination="3uo-GB-uam" eventType="touchUpInside" id="9x7-Tw-Hlz"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQ8-iI-Rg4">
-                                        <rect key="frame" x="0.0" y="55" width="373" height="694"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQ8-iI-Rg4" customClass="MPTextView" customModule="ClearSense" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="205" width="353" height="454"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <attributedString key="attributedText">
                                             <fragment>
@@ -1241,16 +1229,202 @@
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="top">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bottom">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="left">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="right">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textView>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="TITLE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wx6-fJ-qx8">
+                                        <rect key="frame" x="15" y="50" width="343" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="G1b-E7-OqL"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="TITLE">
+                                                <attributes>
+                                                    <font key="NSFont" size="24" name="PretendardGOVVariable-Bold"/>
+                                                    <font key="NSOriginalFont" size="24" name="PretendardGOVVariable-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" textContentType="organization-title"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6d-bt-Qbk">
+                                        <rect key="frame" x="15" y="120" width="162.33333333333334" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="odv-ZE-suA"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Date">
+                                                <attributes>
+                                                    <font key="NSFont" size="18" name="PretendardGOVVariable-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTn-tB-adF">
+                                        <rect key="frame" x="15" y="160" width="159" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="yca-ro-JEo"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Company">
+                                                <attributes>
+                                                    <font key="NSFont" size="18" name="PretendardGOVVariable-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Po-nx-2Ts">
+                                        <rect key="frame" x="15" y="684" width="343" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mls-l0-zvj" customClass="LanguageButton" customModule="ClearSense" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="114.33333333333333" height="50"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" imagePadding="5">
+                                                    <imageReference key="image" image="textformat" catalog="system" symbolScale="default"/>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Edit">
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="PretendardGOVVariable-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localized" value="EDIT"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onClickEdit:" destination="3uo-GB-uam" eventType="touchUpInside" id="e5p-hj-aE6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GA2-3t-Wc4" customClass="LanguageButton" customModule="ClearSense" customModuleProvider="target">
+                                                <rect key="frame" x="114.33333333333334" y="0.0" width="114.33333333333334" height="50"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" imagePadding="5">
+                                                    <imageReference key="image" image="checkmark.circle.fill" catalog="system" symbolScale="default"/>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Done">
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="PretendardGOVVariable-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localized" value="APPLY"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onClickDone:" destination="3uo-GB-uam" eventType="touchUpInside" id="gpL-Ut-U7h"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cst-h3-oBO" customClass="LanguageButton" customModule="ClearSense" customModuleProvider="target">
+                                                <rect key="frame" x="228.66666666666666" y="0.0" width="114.33333333333334" height="50"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" imagePadding="5">
+                                                    <imageReference key="image" image="trash" catalog="system" symbolScale="default"/>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Delete">
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="PretendardGOVVariable-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localized" value="DELETE"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onClickDelete:" destination="3uo-GB-uam" eventType="touchUpInside" id="NDe-iS-Siq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="wy5-eA-n4r"/>
+                                        </constraints>
+                                    </stackView>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="TITLE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TXG-sB-jtd">
+                                        <rect key="frame" x="199" y="160" width="159" height="25"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="dfx-Tk-k3r"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="TITLE">
+                                                <attributes>
+                                                    <font key="NSFont" size="18" name="PretendardGOVVariable-Regular"/>
+                                                    <font key="NSOriginalFont" size="24" name="PretendardGOVVariable-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" textContentType="date-time"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfY-A6-IKh">
+                                        <rect key="frame" x="202.33333333333337" y="120" width="155.66666666666663" height="25"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="sxk-8v-mIa"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Date">
+                                                <attributes>
+                                                    <font key="NSFont" size="18" name="PretendardGOVVariable-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="z0N-j8-Fwt" firstAttribute="leading" secondItem="pMX-Iu-hph" secondAttribute="leading" constant="5" id="1Qb-nu-AZV"/>
-                                    <constraint firstAttribute="bottom" secondItem="zQ8-iI-Rg4" secondAttribute="bottom" id="2E2-bG-YfI"/>
-                                    <constraint firstAttribute="trailing" secondItem="zQ8-iI-Rg4" secondAttribute="trailing" id="bu2-C9-l2o"/>
-                                    <constraint firstItem="zQ8-iI-Rg4" firstAttribute="leading" secondItem="pMX-Iu-hph" secondAttribute="leading" id="dbV-7h-53a"/>
-                                    <constraint firstItem="zQ8-iI-Rg4" firstAttribute="top" secondItem="z0N-j8-Fwt" secondAttribute="bottom" id="nSu-Yw-5qd"/>
-                                    <constraint firstItem="z0N-j8-Fwt" firstAttribute="top" secondItem="pMX-Iu-hph" secondAttribute="top" constant="5" id="oKH-g0-EIq"/>
+                                    <constraint firstItem="z0N-j8-Fwt" firstAttribute="leading" secondItem="pMX-Iu-hph" secondAttribute="leading" id="1Qb-nu-AZV"/>
+                                    <constraint firstItem="zQ8-iI-Rg4" firstAttribute="top" secondItem="ZTn-tB-adF" secondAttribute="bottom" constant="20" id="4m8-xm-eLx"/>
+                                    <constraint firstItem="wx6-fJ-qx8" firstAttribute="top" secondItem="pMX-Iu-hph" secondAttribute="top" constant="50" id="4zU-gU-KO7"/>
+                                    <constraint firstAttribute="trailing" secondItem="zfY-A6-IKh" secondAttribute="trailing" constant="15" id="6CF-CI-K9Q"/>
+                                    <constraint firstItem="ZTn-tB-adF" firstAttribute="width" secondItem="TXG-sB-jtd" secondAttribute="width" id="BPS-Qz-ecH"/>
+                                    <constraint firstItem="p6d-bt-Qbk" firstAttribute="top" secondItem="wx6-fJ-qx8" secondAttribute="bottom" constant="20" id="L7d-mB-As6"/>
+                                    <constraint firstItem="zQ8-iI-Rg4" firstAttribute="top" secondItem="TXG-sB-jtd" secondAttribute="bottom" constant="20" id="Lu9-Ki-pdy"/>
+                                    <constraint firstItem="zfY-A6-IKh" firstAttribute="top" secondItem="wx6-fJ-qx8" secondAttribute="bottom" constant="20" id="Oel-tB-MrT"/>
+                                    <constraint firstItem="TXG-sB-jtd" firstAttribute="top" secondItem="zfY-A6-IKh" secondAttribute="bottom" constant="15" id="QbJ-5f-JnA"/>
+                                    <constraint firstItem="TXG-sB-jtd" firstAttribute="leading" secondItem="ZTn-tB-adF" secondAttribute="trailing" constant="25" id="V2G-Sr-9Hk"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Po-nx-2Ts" secondAttribute="bottom" constant="15" id="XbK-G5-tBc"/>
+                                    <constraint firstItem="ZTn-tB-adF" firstAttribute="leading" secondItem="pMX-Iu-hph" secondAttribute="leading" constant="15" id="aN0-v7-zEv"/>
+                                    <constraint firstItem="Cst-h3-oBO" firstAttribute="top" secondItem="zQ8-iI-Rg4" secondAttribute="bottom" constant="25" id="bJ5-LH-Tyc"/>
+                                    <constraint firstAttribute="trailing" secondItem="zQ8-iI-Rg4" secondAttribute="trailing" constant="10" id="bu2-C9-l2o"/>
+                                    <constraint firstItem="p6d-bt-Qbk" firstAttribute="leading" secondItem="pMX-Iu-hph" secondAttribute="leading" constant="15" id="dSR-0x-dPb"/>
+                                    <constraint firstItem="zQ8-iI-Rg4" firstAttribute="leading" secondItem="pMX-Iu-hph" secondAttribute="leading" constant="10" id="dbV-7h-53a"/>
+                                    <constraint firstAttribute="trailing" secondItem="wx6-fJ-qx8" secondAttribute="trailing" constant="15" id="gba-vh-FVr"/>
+                                    <constraint firstItem="ZTn-tB-adF" firstAttribute="top" secondItem="p6d-bt-Qbk" secondAttribute="bottom" constant="15" id="jTQ-aO-SQ2"/>
+                                    <constraint firstItem="wx6-fJ-qx8" firstAttribute="leading" secondItem="pMX-Iu-hph" secondAttribute="leading" constant="15" id="mEl-ET-GUI"/>
+                                    <constraint firstItem="z0N-j8-Fwt" firstAttribute="top" secondItem="pMX-Iu-hph" secondAttribute="top" id="oKH-g0-EIq"/>
+                                    <constraint firstItem="1Po-nx-2Ts" firstAttribute="leading" secondItem="pMX-Iu-hph" secondAttribute="leading" constant="15" id="pV6-o3-bxI"/>
+                                    <constraint firstItem="p6d-bt-Qbk" firstAttribute="width" secondItem="zfY-A6-IKh" secondAttribute="width" multiplier="1.04386" id="pvF-KH-yhg"/>
+                                    <constraint firstItem="zfY-A6-IKh" firstAttribute="leading" secondItem="p6d-bt-Qbk" secondAttribute="trailing" constant="25" id="vj0-ks-sD5"/>
+                                    <constraint firstAttribute="trailing" secondItem="TXG-sB-jtd" secondAttribute="trailing" constant="15" id="zC0-uf-MSW"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Po-nx-2Ts" secondAttribute="trailing" constant="15" id="zTe-kb-KJc"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1267,13 +1441,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="nbC-WW-nTQ"/>
                     <connections>
-                        <outlet property="label_txt" destination="zQ8-iI-Rg4" id="DlU-z4-SvM"/>
+                        <outlet property="btn_done" destination="GA2-3t-Wc4" id="03g-5Q-paL"/>
+                        <outlet property="btn_edit" destination="Mls-l0-zvj" id="8Dm-b0-iqh"/>
+                        <outlet property="minute_company" destination="TXG-sB-jtd" id="iOQ-ru-ou3"/>
+                        <outlet property="minute_date" destination="zfY-A6-IKh" id="TNi-CT-gaZ"/>
+                        <outlet property="minute_text" destination="zQ8-iI-Rg4" id="bOM-NH-7Pu"/>
+                        <outlet property="minute_title" destination="wx6-fJ-qx8" id="m9K-wI-z21"/>
                         <outlet property="popUpView" destination="pMX-Iu-hph" id="raI-Fm-6ZX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05I-Uo-g4l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21" y="1399"/>
+            <point key="canvasLocation" x="20.610687022900763" y="1398.5915492957747"/>
         </scene>
     </scenes>
     <designables>
@@ -1283,11 +1462,11 @@
     </designables>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="ic_arrow_down" width="22" height="22"/>
         <image name="ic_arrow_down_black" width="22" height="22"/>
         <image name="ic_calendar" width="36" height="36"/>
-        <image name="ic_edit" width="24" height="24"/>
         <image name="ic_file" width="54" height="54"/>
         <image name="ic_headphone" width="24" height="24"/>
         <image name="ic_language" width="40" height="40"/>
@@ -1298,15 +1477,12 @@
         <image name="ic_question" width="24" height="24"/>
         <image name="ic_refresh" width="20" height="20"/>
         <image name="ic_setting" width="54" height="54"/>
-        <image name="ic_share" width="24" height="24"/>
         <image name="ic_simple_mic" width="24" height="24"/>
         <image name="ic_simple_setting" width="24" height="24"/>
-        <image name="ic_trash" width="24" height="24"/>
         <image name="logo_en" width="166" height="35"/>
+        <image name="textformat" catalog="system" width="128" height="78"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <namedColor name="btn_color_disable">
-            <color red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -1320,7 +1496,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tableCellBlueTextColor">
-            <color red="0.039215686274509803" green="0.51764705882352946" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableCellGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

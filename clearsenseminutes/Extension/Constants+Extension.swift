@@ -18,7 +18,7 @@ var isPro: Bool = false
 
 var audioEngine : AudioEngineManager = AudioEngineManager.shared
 var DBconn : DBConnectionManager = DBConnectionManager.shared
-var STTconn : STTConnectionManager = STTConnectionManager.shared
+var STTconn : SSTConnectionManager = SSTConnectionManager.shared
 
 extension UIViewController {
     var navBackBtn: UIBarButtonItem {

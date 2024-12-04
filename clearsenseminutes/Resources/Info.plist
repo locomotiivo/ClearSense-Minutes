@@ -4,14 +4,16 @@
 <dict>
 	<key>DBURL</key>
 	<string>http://$(DB_ID).ap-northeast-2.compute.amazonaws.com:$(DB_PORT)</string>
+	<key>SSTURL</key>
+	<string>ws://horseymask.com/v1/audio/transcriptions?model=$(MODEL)&amp;language=ko&amp;response_format=json&amp;temperature=0</string>
+	<key>WebURL</key>
+	<string>https://$(WEB_URL)/bbs/content.php?co_id=</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>com.mpwav.clearsenseminutes</string>
 	</array>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<string>true</string>
-	<key>EntitlementID</key>
-	<string>$(ENTITLEMENT_ID)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>PretendardGOVVariable.ttf</string>
@@ -44,7 +46,9 @@
 	</array>
 	<key>UIFileSharingEnabled</key>
 	<true/>
-	<key>WebURL</key>
-	<string>https://$(WEB_URL)/bbs/content.php?co_id=</string>
+	<key>NSAllowsLocalNetworking</key>
+	<true/>
+	<key>NSAllowsArbitraryLoads</key>
+	<true/>
 </dict>
 </plist>

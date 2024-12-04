@@ -9,20 +9,23 @@ import Foundation
 import UIKit
 
 class FileRow: UITableViewCell {
-        
-    @IBOutlet weak var label_name: UILabel!
-    @IBOutlet weak var label_length: UILabel!
+    @IBOutlet weak var label_id: UILabel!
+    @IBOutlet weak var label_title: UILabel!
+    @IBOutlet weak var label_company: UILabel!
+    @IBOutlet weak var label_text: UILabel!
     @IBOutlet weak var label_date: UILabel!
-    @IBOutlet weak var btn_play: UIButton!
+    @IBOutlet weak var btn_minute: UIButton!
     
-    var data: File?
+    var data: Minute?
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
         contentView.backgroundColor = .clear
-        label_name.text = ""
-        label_length.text = ""
+        label_id.text = ""
+        label_title.text = ""
+        label_company.text = ""
+        label_text.text = ""
         label_date.text = ""
         data = nil
     }

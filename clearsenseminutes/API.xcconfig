@@ -12,3 +12,5 @@ API_KEY = appl_RbAVAVpzfKHLqJfBDibAduFNfbD
 ENTITLEMENT_ID = Subscription
 DB_ID = ec2-3-35-131-163
 DB_PORT = 3001
+MODEL = Systran/faster-whisper-tiny
+

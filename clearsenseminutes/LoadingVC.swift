@@ -17,7 +17,7 @@ class LoadingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        STTconn.connect()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,20 +26,13 @@ class LoadingVC: UIViewController {
     }
     
     func setup() {
-//        loaderView.isHidden = false
-//        loaderView.startAnimating()
-//        Purchases.shared.getOfferings { (offerings, err) in
-//            if let err = err {
-//                self.catchErr(err)
-//            } else {
-//                Purchases.shared.getCustomerInfo { (customer, err) in
-//                    if let err = err {
-//                        self.catchErr(err)
-//                    } else {
-        self.showMainView()
-//                    }
-//                }
-//            }
+        loaderView.isHidden = false
+        loaderView.startAnimating()
+//        do {
+//            try STTconn.connect()
+            self.showMainView()
+//        } catch let err {
+//            self.catchErr(err)
 //        }
     }
     
