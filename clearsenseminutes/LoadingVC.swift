@@ -1,12 +1,11 @@
 //
-//  PurchasePopupVC.swift
+//  LoadingVC.swift
 //  clearsenseminutes
 //
 //  Created by KooBH on 3/14/24.
 //
 
 import Foundation
-//import RevenueCat
 import UIKit
 
 class LoadingVC: UIViewController {
@@ -28,12 +27,7 @@ class LoadingVC: UIViewController {
     func setup() {
         loaderView.isHidden = false
         loaderView.startAnimating()
-//        do {
-//            try STTconn.connect()
-            self.showMainView()
-//        } catch let err {
-//            self.catchErr(err)
-//        }
+        self.showMainView()
     }
     
     func catchErr(_ err: Error) {

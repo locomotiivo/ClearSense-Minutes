@@ -80,22 +80,7 @@ class LicenseVC: UIViewController {
             ("DropDown", "", "https://github.com/AssistoLab/DropDown"),
             ("Firebase", "11.0.0", "https://github.com/firebase/firebase-ios-sdk"),
             ("Gifu", "", "https://github.com/kaishin/Gifu"),
-            ("GoogleAppMeasurement", "11.0.0", "https://github.com/google/GoogleAppMeasurement"),
-            ("GoogleDataTransport", "10.1.0", "https://github.com/google/GoogleDataTransport"),
-            ("GoogleUtilities", "8.0.2", "https://github.com/google/GoogleUtilities"),
-            ("gRPC", "1.65.1", "https://github.com/google/grpc-binary"),
-            ("gtm-session-fetcher", "3.5.0", "https://github.com/google/gtm-session-fetcher"),
-            ("InteropForGoogle", "100.0.0", "https://github.com/google/interop-ios-for-google-sdks"),
-            ("leveldb", "1.22.5", "https://github.com/firebase/leveldb"),
-            ("nanopb", "2.30910.0", "https://github.com/firebase/nanopb"),
-            ("onnxruntime-swift-package-manager", "1.18.0", "https://github.com/microsoft/onnxruntime-swift-package-manager"),
-            ("Promises", "2.4.0", "https://github.com/google/promises"),
-            ("RevenueCat", "4.43.2", "https://github.com/RevenueCat/purchases-ios"),
-            ("SwiftProtobuf", "1.27.1", "https://github.com/apple/swift-protobuf"),
             ("TPCircularBuffer", "1.6.2", "https://github.com/michaeltyson/TPCircularBuffer"),
-            ("Ooura FFT","","https://www.kurims.kyoto-u.ac.jp/~ooura/fft.html"),
-            ("Libresample","","https://github.com/minorninth/libresample/tree/master"),
-            ("Onnxruntime","","https://github.com/microsoft/onnxruntime/blob/main/LICENSE")
         ]
         
         // 데이터를 stackView에 추가

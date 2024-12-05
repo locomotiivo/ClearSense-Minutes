@@ -1,5 +1,5 @@
 //
-//  FilesArray.swift
+//  SSTConnectionManager.swift
 //  clearsenseminutes
 //
 //  Created by KooBH on 7/17/24.
@@ -9,20 +9,6 @@ import AVFoundation
 import Foundation
 import SwiftyJSON
 import OSLog
-
-struct Word {
-    var start: Int
-    var end: Int
-    var confidence: Double
-    var text: String
-}
-
-struct Transcript {
-    var msgType : String
-    var text : String
-    var confidence: Double
-    var words: [Word]
-}
 
 enum STTRequestError: Error {
     case invalidURL
@@ -65,7 +51,6 @@ class SSTConnectionManager: NSObject {
         text = ""
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.addValue("\(apiKey)", forHTTPHeaderField: "Authorization")
         
         task = urlSession?.webSocketTask(with: request)
         task?.resume()
@@ -105,29 +90,14 @@ class SSTConnectionManager: NSObject {
         }
         
         let json = JSON(data)
-        guard let msgType = json["message_type"].string,
-              let text = json["text"].string,
-              let confidence = json["confidence"].double,
-              let wordDict = json["words"].object as? [[String: Any]]
+        guard let text = json["text"].string
         else {
             let message = "WebSocket: Error parsing STT data"
             os_log(.error, log: .system, "%@", message)
             return
         }
         
-        let word = wordDict.compactMap { wordDict -> Word? in
-            guard let start = wordDict["start"] as? Int,
-                  let end = wordDict["end"] as? Int,
-                  let wordConfidence = wordDict["confidence"] as? Double,
-                  let wordText = wordDict["text"] as? String
-            else {
-                return nil
-            }
-            return Word(start: start, end: end, confidence: confidence, text: wordText)
-        }
-        
-        let transcript = Transcript(msgType: msgType, text: text, confidence: confidence, words: word)
-        self.text = transcript.text
+        self.text = text
     }
     
     func send(pcmBuffer: AVAudioPCMBuffer) {

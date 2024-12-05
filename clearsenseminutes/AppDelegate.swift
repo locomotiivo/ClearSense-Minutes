@@ -96,15 +96,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
-
-//extension AppDelegate: PurchasesDelegate {
-//    func purchases(_ purchases: Purchases, receivedUpdated customerInfo: CustomerInfo) {
-//        let entitlementID = Bundle.main.infoDictionary?["EntitlementID"] as! String
-//        if customerInfo.entitlements[entitlementID]?.isActive == true {
-//            isPro = true
-//        } else {
-////            isPro = false
-//            isPro = true
-//        }
-//    }
-//}

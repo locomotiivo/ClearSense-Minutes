@@ -1,5 +1,5 @@
 //
-//  EmptyFileView.swift
+//  EmptyMinuteView.swift
 //  clearsenseminutes
 //
 //  Created by HYUNJUN SHIN on 8/30/24.
@@ -7,8 +7,7 @@
 
 import UIKit
 
-class EmptyFileView: UIView {
-    
+class EmptyMinuteView: UIView {
     private var stackView: UIStackView!
     private var imageView = UIImageView()
     private var messageLabel = UILabel()

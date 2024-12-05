@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var bgView: UIView!
     
-    @IBOutlet weak var fileBtn: UIButton!           // 파일 버튼
+    @IBOutlet weak var minuteBtn: UIButton!           // 파일 버튼
     @IBOutlet weak var logoImg: UIImageView!        // 앱 로고
     
     @IBOutlet weak var micBtn: UIButton!            // 재생 버튼ß
@@ -58,7 +58,6 @@ class MainViewController: UIViewController {
         }
         
         setupLayout()       // 홈 화면 UI 세팅
-        createMpwavDir()    // 하위 디렉토리 생성
         checkHeadphoneConnected()
     }
     
@@ -126,23 +125,10 @@ class MainViewController: UIViewController {
         emptyTextView.isHidden = false
     }
     
-    // 도큐먼트 디렉토리 내에 mpWAV 하위 디렉토리 생성
-    private func createMpwavDir() {
-        let dirExists = (try? mpWAVURL.checkResourceIsReachable()) ?? false
-        do {
-            if !dirExists {
-                try FileManager.default.createDirectory(atPath: mpWAVURL.path, withIntermediateDirectories: true)
-            }
-        } catch {
-            os_log(.error, log: .audio, "%@", "Error creating Directory: \(error.localizedDescription)")
-            mpWAVURL = URL.documentsDirectory
-        }
-    }
-    
     // MARK: - IBAction
     // 파일 버튼 클릭 이벤트
-    @IBAction func onClickFile(_ sender: UIButton) {
-        guard let vc = self.storyboard?.instantiateViewController(identifier: "FilesVC") as? FilesVC else { return }
+    @IBAction func onClickMinute(_ sender: UIButton) {
+        guard let vc = self.storyboard?.instantiateViewController(identifier: "MinuteVC") as? MinuteVC else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -151,11 +137,7 @@ class MainViewController: UIViewController {
         if audioEngine.isRunning {
             togglePlayback(false)
         } else {
-            if isPro {
-                togglePlayback(true)
-            } else {
-                openPaywallVC()
-            }
+            togglePlayback(true)
         }
     }
     
@@ -331,11 +313,5 @@ class MainViewController: UIViewController {
         vc.view.backgroundColor = .black.withAlphaComponent(0.6)
         vc.view.layer.cornerRadius = 8
         navigationController?.present(vc, animated: true, completion: nil)
-    }
-    
-    // 결제화면으로 이동
-    private func openPaywallVC() {
-//        guard let vc = self.storyboard?.instantiateViewController(identifier: "PaywallVC") as? PaywallVC else { return }
-//        navigationController?.pushViewController(vc, animated: true)
     }
 }

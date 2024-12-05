@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Minute.swift
 //  clearsenseminutes
 //
 //  Created by greenthings on 7/30/24.
@@ -9,7 +9,6 @@ import Foundation
 
 
 final class Minute{
-    
     var id : String
     var title : String
     var text : String

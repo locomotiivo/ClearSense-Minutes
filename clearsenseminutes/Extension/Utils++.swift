@@ -33,12 +33,6 @@ public class Utils {
         }
     }
     
-    // 파일 이름으로 주소 반환
-    internal static func getFilePath(_ name: String) -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        return "\(paths[0])/mpWAV/\(name)"
-    }
-    
     // Hz문자열 정리하여 반환
     internal static func convertHz(_ value: Double) -> String { convertHz(Int(value)) }
     internal static func convertHz(_ value: Int) -> String {        

@@ -182,6 +182,9 @@ class AudioEngineManager : AURecordCallbackDelegate {
                     let data = UnsafeMutableRawPointer(abl![0].mData)
                     if let dptr = data {
                         let arr = dptr.assumingMemoryBound(to: Float32.self)
+                        
+                        dump(Array(UnsafeBufferPointer(start: arr, count: samples)))
+                        
                         memcpy((dstBuffer!), arr, Int(abl![0].mDataByteSize))
                         TPCircularBufferProduce(&rBufferIn, UInt32(neededBytes))
                     }

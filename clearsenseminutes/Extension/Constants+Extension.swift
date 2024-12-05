@@ -12,8 +12,6 @@ import OSLog
 
 var versionStr: String = ""
 
-var mpWAVURL = URL(string: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])!.appendingPathComponent("mpWAV", isDirectory: true)
-
 var isPro: Bool = false
 
 var audioEngine : AudioEngineManager = AudioEngineManager.shared
@@ -149,7 +147,6 @@ extension OSLog {
     private static var subsystem = Bundle.main.bundleIdentifier!
     static let files = OSLog(subsystem: subsystem, category: "Files")
     static let audio = OSLog(subsystem: subsystem, category: "Audio")
-    static let paywall = OSLog(subsystem: subsystem, category: "Paywall")
     static let system = OSLog(subsystem: subsystem, category: "System")
 }
 

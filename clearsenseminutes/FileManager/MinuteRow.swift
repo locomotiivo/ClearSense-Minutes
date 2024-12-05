@@ -1,5 +1,5 @@
 //
-//  FileRow.swift
+//  MinuteRow.swift
 //  clearsenseminutes
 //
 //  Created by KooBH on 2/19/24.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class FileRow: UITableViewCell {
+class MinuteRow: UITableViewCell {
     @IBOutlet weak var label_id: UILabel!
     @IBOutlet weak var label_title: UILabel!
     @IBOutlet weak var label_company: UILabel!
