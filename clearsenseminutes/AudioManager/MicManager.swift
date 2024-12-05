@@ -317,10 +317,10 @@ class AudioEngineManager : AURecordCallbackDelegate {
         err = AudioUnitSetProperty(audioUnit!,
                                    kAudioUnitProperty_SetRenderCallback,
 //                             kAudioOutputUnitProperty_SetInputCallback,
-                             kAudioUnitScope_Global,
-                             1,
-                             &recordCallbackStruct,
-                             UInt32(MemoryLayout<AURenderCallbackStruct>.size))
+                                   kAudioUnitScope_Global,
+                                   1,
+                                   &recordCallbackStruct,
+                                   UInt32(MemoryLayout<AURenderCallbackStruct>.size))
         
         if err != noErr {
             let messages = "Error setting up AURecordCallback: \(err.description)"
@@ -383,26 +383,29 @@ class AudioEngineManager : AURecordCallbackDelegate {
             return
         }
         
+        print("\(neededBytes) >= \(availableBytes)")
         if (availableBytes >= neededBytes) {
-            let outputFormatSettings = [
-                AVFormatIDKey : kAudioFormatLinearPCM,
-                AVLinearPCMBitDepthKey : 16,
-                AVLinearPCMIsFloatKey : true,
-                AVSampleRateKey : SAMPLE_RATE,
-                AVNumberOfChannelsKey : 1
-                ] as [String : Any]
+            if STTconn.isConnected {
+                let outputFormatSettings = [
+                    AVFormatIDKey : kAudioFormatLinearPCM,
+                    AVLinearPCMBitDepthKey : 16,
+                    AVLinearPCMIsFloatKey : true,
+                    AVSampleRateKey : SAMPLE_RATE,
+                    AVNumberOfChannelsKey : 1
+                    ] as [String : Any]
 
-            let bufferFormat = AVAudioFormat(settings: outputFormatSettings)!
-            guard let outputBuffer = AVAudioPCMBuffer(pcmFormat: bufferFormat, frameCapacity: AVAudioFrameCount(samples)) else {
-                return
+                let bufferFormat = AVAudioFormat(settings: outputFormatSettings)!
+                guard let outputBuffer = AVAudioPCMBuffer(pcmFormat: bufferFormat, frameCapacity: AVAudioFrameCount(samples)) else {
+                    return
+                }
+                for i in 0..<samples {
+                    outputBuffer.int16ChannelData!.pointee[i] = ptrIn[bufferIdx]
+                    bufferIdx = (bufferIdx + 1) % samples
+                }
+                outputBuffer.frameLength = AVAudioFrameCount(samples)
+                
+                STTconn.send(pcmBuffer: outputBuffer)
             }
-            for i in 0..<samples {
-                outputBuffer.int16ChannelData!.pointee[i] = ptrIn[bufferIdx]
-                bufferIdx = (bufferIdx + 1) % samples
-            }
-            outputBuffer.frameLength = AVAudioFrameCount(samples)
-            
-            STTconn.send(pcmBuffer: outputBuffer)
             TPCircularBufferConsume(&rBufferIn, neededBytes)
         }
     }
@@ -425,11 +428,6 @@ class AudioEngineManager : AURecordCallbackDelegate {
             }
         }
         timer!.activate()
-
-        do {
-            try STTconn.connect()
-        } catch let err {
-        }
         
         os_log(.info, log: .audio, "AU Started")
     }
@@ -447,8 +445,6 @@ class AudioEngineManager : AURecordCallbackDelegate {
             os_log(.info, log: .audio, "AU Stopped")
         }
         
-        STTconn.disconnect()
-
         TPCircularBufferCleanup(&rBufferIn)
     }
 }

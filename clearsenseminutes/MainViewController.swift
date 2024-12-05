@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import Foundation
+import SwiftyJSON
 import MediaPlayer
 import Dispatch
 import AVKit
@@ -41,6 +43,8 @@ class MainViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        STTconn.setDelegate(self)
         
         // 저장해뒀던 데이터 불러와 세팅
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -151,31 +155,22 @@ class MainViewController: UIViewController {
     // 재생 / 정지
     private func togglePlayback(_ flag: Bool) {
         if flag {
-            // 재생
-            
-            // Text View
-            minuteView.isHidden = false
-            emptyTextView.isHidden = true
-            minuteView.text = ""
-            
-            micBtn.isSelected = true
-            avPlayer.play()
-            
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                audioEngine.start_audio_unit()
+            // Connect to STT Server
+            do {
+                try STTconn.connect()
+            } catch let err {
+                let messages = "Error connecting to STT Server: \(err.localizedDescription)"
+                os_log(.error, log: .audio, "%@", messages)
             }
         } else {
-            // 정지
+            // Disconnect from STT Server
+            STTconn.disconnect()
+            
             micBtn.isSelected = false
             avPlayer.pause()
             
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 audioEngine.stop_audio_unit()
-                
-                // Text View
-//                self.minuteView.isHidden = true
-//                self.emptyTextView.isHidden = false
-//                self.minuteView.text = ""
             }
         }
     }
@@ -309,5 +304,52 @@ class MainViewController: UIViewController {
         vc.view.backgroundColor = .black.withAlphaComponent(0.6)
         vc.view.layer.cornerRadius = 8
         navigationController?.present(vc, animated: true, completion: nil)
+    }
+}
+
+extension MainViewController : STTDelegate {
+    func STTConnect() {
+        let message = "Connected to STT Server!"
+        os_log(.info, log: .system, "%@", message)
+        DispatchQueue.main.sync {
+            minuteView.isHidden = false
+            emptyTextView.isHidden = true
+            minuteView.text = ""
+            
+            micBtn.isSelected = true
+            avPlayer.play()
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                audioEngine.start_audio_unit()
+            }
+        }
+    }
+    
+    func STTCallback(text: String) {
+        DispatchQueue.main.async {
+            let message = "TEXT RESPONSE: \(text)"
+            os_log(.info, log: .system, "%@", message)
+            self.minuteView.text = text
+        }
+    }
+    
+    func STTCallback(data: Data) {
+        DispatchQueue.main.async {
+            let json = JSON(data)
+            guard let text = json["text"].string
+            else {
+                let message = "WebSocket: Error parsing STT data"
+                os_log(.error, log: .system, "%@", message)
+                return
+            }
+            
+            let message = "DATA RESPONSE: \(text)"
+            os_log(.info, log: .system, "%@", message)
+            self.minuteView.text = text
+        }
+    }
+    
+    func STTError(message: String) {
+        let message = "ERROR IN STTConnectionManager: \(message)"
+        os_log(.error, log: .system, "%@", message)
     }
 }

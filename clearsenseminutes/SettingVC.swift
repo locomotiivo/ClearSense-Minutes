@@ -10,8 +10,7 @@ import AVKit
 import CoreData
 import OSLog
 
-class SettingVC: UIViewController, CSSwitchDelegate {
-    
+class SettingVC: UIViewController {
     // 메뉴들
     @IBOutlet weak var menualMenu: UIView!  // 도움말 메뉴
     @IBOutlet weak var outputMenu: UIView!  // 출력
@@ -62,7 +61,6 @@ class SettingVC: UIViewController, CSSwitchDelegate {
     private func setupControl() {
         // 메뉴 클릭 이벤트 세팅
         menualMenu.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClickMenual)))
-        outputMenu.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClickDropDownOut)))
         contactMenu.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClickContact)))
         devMenu.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(gotoAdvanced)))
     }
@@ -90,25 +88,7 @@ class SettingVC: UIViewController, CSSwitchDelegate {
         
         present(vc, animated: true, completion: nil)
     }
-    
-    // 개인화 메뉴 클릭
-    @objc func onClickPersonalization(_ sender: Any) {
-        guard let vc = self.storyboard?.instantiateViewController(identifier: "EqualizerViewController") as? EqualizerViewController else { return }
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    // 방향감지
-    func onChange(isOn: Bool) {
-        // TODO: 방향감지 변경값 audioEngine, Entity 값 세팅
-    }
-    
-    // 출력 메뉴 클릭
-    @objc func onClickDropDownOut(_ sender: Any) {
-        if let routePickerButton = routePickerView.subviews.first(where: { $0 is UIButton }) as? UIButton {
-            routePickerButton.sendActions(for: .touchUpInside)
-        }
-    }
-    
+
     // 고객문의 메뉴 클릭
     @objc func onClickContact(_ sender: Any) {
         var components = URLComponents()
