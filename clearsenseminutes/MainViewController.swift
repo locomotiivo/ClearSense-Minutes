@@ -152,10 +152,6 @@ class MainViewController: UIViewController {
     private func togglePlayback(_ flag: Bool) {
         if flag {
             // 재생
-//            guard isHeadphoneConnected else {
-//                Alert("ROUTE_CHANGE_HEADER".localized(), "ROUTE_CHANGE_ERR".localized() + "ROUTE_CHANGE_RECOMMEND".localized(), nil)
-//                return
-//            }
             
             // Text View
             minuteView.isHidden = false
