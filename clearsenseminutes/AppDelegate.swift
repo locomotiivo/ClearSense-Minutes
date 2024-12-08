@@ -23,8 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = nav
         window!.makeKeyAndVisible()
         
-        isPro = true
-                
+        formatterISO.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        formatterTxt.dateFormat = "yyyy/MM/dd"
+        
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         UINavigationBar.appearance().standardAppearance = appearance

@@ -12,11 +12,21 @@ import OSLog
 
 var versionStr: String = ""
 
-var isPro: Bool = false
+var mpWAVURL = URL(string: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])!.appendingPathComponent("mpWAV", isDirectory: true)
+
+let formatterISO = DateFormatter()
+let formatterTxt = DateFormatter()
 
 var audioEngine : AudioEngineManager = AudioEngineManager.shared
 var DBconn : DBConnectionManager = DBConnectionManager.shared
 var STTconn : STTConnectionManager = STTConnectionManager.shared
+
+struct AppNotification{
+    static let changeLanguage = Notification.Name("changeLanguage")
+    static let deleteMinute = Notification.Name("deleteMinute")
+    static let changeDate = Notification.Name("changeDate")
+    static let changeEq = Notification.Name("changeEq")
+}
 
 extension UIViewController {
     var navBackBtn: UIBarButtonItem {
@@ -169,11 +179,6 @@ extension Float {
         let val = self.rounded() == 0 ? 0 : self.rounded()
         return Float.EqFormat.string(for: val) ?? "+0"
     }
-}
-
-struct AppNotification{
-    static let changeLanguage = Notification.Name("changeLanguage")
-    static let changeEq = Notification.Name("changeEq")
 }
 
 extension UIButton {

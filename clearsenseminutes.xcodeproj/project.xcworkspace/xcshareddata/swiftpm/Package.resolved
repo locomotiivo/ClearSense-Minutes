@@ -1,24 +1,6 @@
 {
-  "originHash" : "54c9e3cb61baa584d6042af21de8015baa992344d3dd08497b9fb1791a63b88f",
+  "originHash" : "02cb140b10fd44627a20301e04656668afad69267037bf575cbaac3bf2241b98",
   "pins" : [
-    {
-      "identity" : "dropdown",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/AssistoLab/DropDown",
-      "state" : {
-        "branch" : "master",
-        "revision" : "2ab6f6ce19f0117d1a76ea043ef8f57722c65d16"
-      }
-    },
-    {
-      "identity" : "gifu",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kaishin/Gifu",
-      "state" : {
-        "branch" : "master",
-        "revision" : "639e40d5dbd86dfa94fc61296c270b49af6f8a2a"
-      }
-    },
     {
       "identity" : "lottie-spm",
       "kind" : "remoteSourceControl",

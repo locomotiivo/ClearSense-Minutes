@@ -68,14 +68,7 @@ class SettingVC: UIViewController {
     // MARK: - onClick Event
     // 언어설정 버튼 클릭
     @objc func onClickLanguage(_ sender: Any) {
-        guard let vc = self.storyboard?.instantiateViewController(identifier: "LanguageVC") as? LanguageVC else {
-            return
-        }
         
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.view.backgroundColor = .black.withAlphaComponent(0.6)
-        vc.view.layer.cornerRadius = 8
-        navigationController?.present(vc, animated: true, completion: nil)
     }
     
     // 도움말 버튼 클릭

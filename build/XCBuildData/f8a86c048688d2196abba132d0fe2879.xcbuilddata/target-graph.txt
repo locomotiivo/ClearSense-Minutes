@@ -1,0 +1,17 @@
+Target dependency graph (8 targets)
+Target 'clearsenseminutes' in project 'clearsenseminutes'
+➜ Explicit dependency on target 'SwiftyJSON' in project 'SwiftyJSON'
+➜ Explicit dependency on target 'Lottie' in project 'Lottie'
+➜ Explicit dependency on target 'TPCircularBuffer' in project 'TPCircularBuffer'
+Target 'TPCircularBuffer' in project 'TPCircularBuffer'
+➜ Explicit dependency on target 'CTPCircularBuffer' in project 'TPCircularBuffer'
+Target 'CTPCircularBuffer' in project 'TPCircularBuffer' (no dependencies)
+Target 'Lottie' in project 'Lottie'
+➜ Explicit dependency on target '_LottieStub' in project 'Lottie'
+Target '_LottieStub' in project 'Lottie' (no dependencies)
+Target 'SwiftyJSON' in project 'SwiftyJSON'
+➜ Explicit dependency on target 'SwiftyJSON' in project 'SwiftyJSON'
+➜ Explicit dependency on target 'SwiftyJSON_SwiftyJSON' in project 'SwiftyJSON'
+Target 'SwiftyJSON' in project 'SwiftyJSON'
+➜ Explicit dependency on target 'SwiftyJSON_SwiftyJSON' in project 'SwiftyJSON'
+Target 'SwiftyJSON_SwiftyJSON' in project 'SwiftyJSON' (no dependencies)

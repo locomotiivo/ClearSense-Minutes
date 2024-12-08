@@ -1,0 +1,30 @@
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/FileManager/Minute.swift":
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/Minute.swiftconstvalues"
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/Minute.d"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/Minute.o"
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/Minute.swiftdeps"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/Minute.dia"
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/Components/ChartSkirtView.swift":
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/ChartSkirtView.dia"
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/ChartSkirtView.swiftdeps"
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/ChartSkirtView.swiftconstvalues"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/ChartSkirtView.o"
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/ChartSkirtView.d"
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/AudioManager/MicManager.swift":
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MicManager.d"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MicManager.o"
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MicManager.swiftconstvalues"
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MicManager.swiftdeps"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MicManager.dia"
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/FileManager/MinuteVC.swift":
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MinuteVC.d"
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MinuteVC.swiftconstvalues"
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MinuteVC.swiftdeps"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MinuteVC.o"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MinuteVC.dia"
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/LoadingIndicator.swift":
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/LoadingIndicator.swiftdeps"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/LoadingIndicator.o"
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/LoadingIndicator.swiftconstvalues"
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/LoadingIndicator.d"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/LoadingIndicator.dia"

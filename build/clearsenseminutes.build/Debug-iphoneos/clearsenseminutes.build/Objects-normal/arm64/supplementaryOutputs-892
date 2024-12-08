@@ -1,0 +1,30 @@
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/WebVC.swift":
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/WebVC.swiftconstvalues"
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/WebVC.d"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/WebVC.o"
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/WebVC.swiftdeps"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/WebVC.dia"
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/FileManager/EmptyMinuteView.swift":
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/EmptyMinuteView.swiftconstvalues"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/EmptyMinuteView.dia"
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/EmptyMinuteView.d"
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/EmptyMinuteView.swiftdeps"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/EmptyMinuteView.o"
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/Components/CSSwitch.swift":
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/CSSwitch.d"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/CSSwitch.o"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/CSSwitch.dia"
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/CSSwitch.swiftdeps"
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/CSSwitch.swiftconstvalues"
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/LoadingVC.swift":
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/LoadingVC.swiftdeps"
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/LoadingVC.swiftconstvalues"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/LoadingVC.dia"
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/LoadingVC.d"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/LoadingVC.o"
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/FileManager/MinuteDetailsVC.swift":
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MinuteDetailsVC.swiftdeps"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MinuteDetailsVC.o"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MinuteDetailsVC.dia"
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MinuteDetailsVC.d"
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/MinuteDetailsVC.swiftconstvalues"

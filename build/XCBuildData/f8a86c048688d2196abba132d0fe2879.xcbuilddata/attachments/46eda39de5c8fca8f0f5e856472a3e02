@@ -1,0 +1,28 @@
+{
+  "" : {
+    "diagnostics" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/SwiftyJSON-master.dia",
+    "emit-module-dependencies" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/SwiftyJSON-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/SwiftyJSON-master-emit-module.dia",
+    "swift-dependencies" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/SwiftyJSON-master.swiftdeps"
+  },
+  "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/Source/SwiftyJSON/SwiftyJSON.swift" : {
+    "const-values" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/SwiftyJSON.swiftconstvalues",
+    "dependencies" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/SwiftyJSON.d",
+    "diagnostics" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/SwiftyJSON.dia",
+    "index-unit-output-path" : "/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/SwiftyJSON.o",
+    "llvm-bc" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/SwiftyJSON.bc",
+    "object" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/SwiftyJSON.o",
+    "swift-dependencies" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/SwiftyJSON.swiftdeps",
+    "swiftmodule" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/SwiftyJSON~partial.swiftmodule"
+  },
+  "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/DerivedSources/resource_bundle_accessor.swift" : {
+    "const-values" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/resource_bundle_accessor.swiftconstvalues",
+    "dependencies" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/resource_bundle_accessor.d",
+    "diagnostics" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/resource_bundle_accessor.dia",
+    "index-unit-output-path" : "/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/resource_bundle_accessor.o",
+    "llvm-bc" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/resource_bundle_accessor.bc",
+    "object" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/resource_bundle_accessor.o",
+    "swift-dependencies" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/resource_bundle_accessor.swiftdeps",
+    "swiftmodule" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/SwiftyJSON/build/SwiftyJSON.build/Debug-iphoneos/SwiftyJSON.build/Objects-normal/arm64/resource_bundle_accessor~partial.swiftmodule"
+  }
+}

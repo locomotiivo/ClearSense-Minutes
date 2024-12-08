@@ -62,6 +62,17 @@ class MainViewController: UIViewController {
         }
         
         setupLayout()       // 홈 화면 UI 세팅
+        let dirExists = (try? mpWAVURL.checkResourceIsReachable()) ?? false
+        do {
+            if !dirExists {
+                try FileManager.default.createDirectory(atPath: mpWAVURL.path, withIntermediateDirectories: true)
+            }
+        } catch {
+            let message = "Error creating Directory: \(error.localizedDescription)"
+            os_log(.error, log: .audio, "%@", message)
+            
+            mpWAVURL = URL.documentsDirectory
+        }
         checkHeadphoneConnected()
     }
     
@@ -157,10 +168,13 @@ class MainViewController: UIViewController {
         if flag {
             // Connect to STT Server
             do {
+                LoadingIndicator.showLoading()
                 try STTconn.connect()
             } catch let err {
+                LoadingIndicator.hideLoading()
                 let messages = "Error connecting to STT Server: \(err.localizedDescription)"
                 os_log(.error, log: .audio, "%@", messages)
+                showToast(messages)
             }
         } else {
             // Disconnect from STT Server
@@ -319,6 +333,7 @@ extension MainViewController : STTDelegate {
             micBtn.isSelected = true
             avPlayer.play()
             DispatchQueue.main.asyncAfter(deadline: .now()) {
+                LoadingIndicator.hideLoading()
                 audioEngine.start_audio_unit()
             }
         }
@@ -326,8 +341,17 @@ extension MainViewController : STTDelegate {
     
     func STTCallback(text: String) {
         DispatchQueue.main.async {
-            let message = "TEXT RESPONSE: \(text)"
-            os_log(.info, log: .system, "%@", message)
+            guard let data = text.data(using: .utf8) else {
+                return
+            }
+            let json = JSON(data)
+            guard let text = json["text"].string
+            else {
+                let message = "WebSocket: Error parsing STT data"
+                os_log(.error, log: .system, "%@", message)
+                self.showToast(message)
+                return
+            }
             self.minuteView.text = text
         }
     }
@@ -339,17 +363,19 @@ extension MainViewController : STTDelegate {
             else {
                 let message = "WebSocket: Error parsing STT data"
                 os_log(.error, log: .system, "%@", message)
+                self.showToast(message)
                 return
             }
-            
-            let message = "DATA RESPONSE: \(text)"
-            os_log(.info, log: .system, "%@", message)
             self.minuteView.text = text
         }
     }
     
     func STTError(message: String) {
-        let message = "ERROR IN STTConnectionManager: \(message)"
-        os_log(.error, log: .system, "%@", message)
+        DispatchQueue.main.async {
+            LoadingIndicator.hideLoading()
+            let message = "ERROR IN STTConnectionManager: \(message)"
+            os_log(.error, log: .system, "%@", message)
+            self.Alert("ERROR".localized(), message, nil)
+        }
     }
 }

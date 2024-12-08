@@ -46,9 +46,22 @@
 	</array>
 	<key>UIFileSharingEnabled</key>
 	<true/>
-	<key>NSAllowsLocalNetworking</key>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
-	<key>NSAllowsArbitraryLoads</key>
+	<key>UISupportsDocumentBrowser</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>http://$(DB_ID).ap-northeast-2.compute.amazonaws.com:$(DB_PORT)</key>
+			<dict>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

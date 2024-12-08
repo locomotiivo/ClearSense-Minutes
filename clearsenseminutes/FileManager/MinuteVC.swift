@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import OSLog
+import SwiftyJSON
 
 class MinuteVC: UIViewController {
     
@@ -38,6 +39,7 @@ class MinuteVC: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(doQuery), name: AppNotification.deleteMinute, object: nil)
         
         // 네비게이션 바
         let appearance = UINavigationBarAppearance()
@@ -93,13 +95,49 @@ class MinuteVC: UIViewController {
         controlBtnView.isHidden = true
         controlBtnViewHeight.isActive = true
         
+        doQuery()
+    }
+    
+    @objc func doQuery() {
         // 파일 데이터
-        Task {
-            let data = try? await DBconn.DBRequest("GET", ["URL":"/meetings/get-all-records/"])
-            print(data?.rawString() ?? "NO DATA")
+        list.removeAll()
+        do {
+            try DBconn.DBRequest("GET", false, "/meetings/get-all-records/", [:]) { [weak self]
+                (flag, res, msg, data) in
+                guard flag,
+                let data = data else {
+                    self?.Alert("ERROR".localized(), msg, nil)
+                    return
+                }
+                let jsonObj = JSON(data)["data"].object
+                let msg = JSON(data)["message"].string
+                let json = JSON(jsonObj)
+                for i in 0..<json.count {
+                    let item = JSON(json[i].object)
+                    guard let id = item["id"].int,
+                          let title = item["meeting_name"].string,
+                          let company = item["company_name"].string,
+                          let date = item["meeting_datetime"].string,
+                          let dt = formatterISO.date(from: date) else {
+                        self?.Alert("ERROR".localized(), msg ?? "", nil)
+                        return
+                    }
+                    self?.list.append(Minute(id: String(id), title: title, company: company, text: "", date: dt, idx: i))
+                }
+                self?.checkNoEntry()
+            }
         }
-        
-        checkNoEntry()
+        catch DBRequestError.invalidURL(let err) {
+            Alert("ERROR".localized(), err, nil)
+        } catch DBRequestError.missingData(let err) {
+            Alert("ERROR".localized(), err, nil)
+        } catch DBRequestError.AccessDenied(let err) {
+            Alert("ERROR".localized(), err, nil)
+        } catch DBRequestError.ErrorCode(let err) {
+            Alert("ERROR".localized(), err, nil)
+        } catch (let err) {
+            Alert("ERROR".localized(), err.localizedDescription, nil)
+        }
     }
     
     // MARK: - 네비게이션 아이템 클릭 이벤트
@@ -145,6 +183,7 @@ class MinuteVC: UIViewController {
             tableView.isHidden = false
             emptyView.isHidden = true
         }
+        tableView.reloadData()
     }
     
     // 선택된 아이템 판단하여 필요한 UI 변경
@@ -207,21 +246,53 @@ class MinuteVC: UIViewController {
     
     // 파일 삭제
     private func deleteMinute() {
+        var success = true
+        var title : String = ""
+        var message = ""
         for item in selected {
-            Task {
-                let data = try? await DBconn.DBRequest("POST", ["URL":"/meetings/delete-record/\(item.id)"])
-                
-                print("DELETE RESPONSE : \(data ?? "nil")")
-                
+            do {
+                try DBconn.DBRequest("DELETE", false, "/meetings/delete-record/\(item.id)", [:]) {
+                    (flag, res, msg, data) in
+                    guard flag,
+                          let data = data,
+                          res == 200
+                    else {
+                        success = false
+                        title = item.title
+                        message = msg
+                        return
+                    }
+                }
+            }
+            catch DBRequestError.invalidURL(let err) {
+                success = false
+                message = err
+            } catch DBRequestError.missingData(let err) {
+                success = false
+                message = err
+            } catch DBRequestError.AccessDenied(let err) {
+                success = false
+                message = err
+            } catch DBRequestError.ErrorCode(let err) {
+                Alert("ERROR".localized(), err, nil)
+            } catch (let err) {
+                success = false
+                message = err.localizedDescription
+            }
+            if !success {
+                break
             }
             list.removeAll{ $0.id == item.id}
             selected.remove(item) // Delete On View
         }
-        showToast("SUCCESS".localized())
         
-        tableView.reloadData()
-        checkNoEntry()
-        self.navigationItem.title =  "\(Array(selected).count)" + "SELECTED".localized()
+        if success {
+            Alert("DELETE_SUCCESS".localized(), message) {
+                self.doQuery()
+            }
+        } else {
+            Alert("ERROR".localized(), "Error Deleting \(title.count < 10 ? title : title.prefix(10) + "...") : \(message)", nil)
+        }
     }
 }
 
@@ -233,6 +304,10 @@ extension MinuteVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -254,16 +329,9 @@ extension MinuteVC: UITableViewDelegate, UITableViewDataSource {
         cell.label_title.text = list[indexPath.row].title
         cell.label_company.text = list[indexPath.row].company
         cell.label_text.text = list[indexPath.row].text
-        
-        let df = DateFormatter()
-        df.dateFormat = "yyyy/MM/dd"
-        cell.label_date.text = df.string(from: list[indexPath.row].date)
+        cell.label_date.text = formatterTxt.string(from: list[indexPath.row].date)
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 66
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

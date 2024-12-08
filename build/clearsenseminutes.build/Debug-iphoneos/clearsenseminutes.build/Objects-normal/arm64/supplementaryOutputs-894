@@ -1,0 +1,24 @@
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/AppDelegate.swift":
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/AppDelegate.swiftconstvalues"
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/AppDelegate.swiftdeps"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/AppDelegate.dia"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/AppDelegate.o"
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/AppDelegate.d"
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/SceneDelegate.swift":
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/SceneDelegate.swiftdeps"
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/SceneDelegate.swiftconstvalues"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/SceneDelegate.o"
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/SceneDelegate.d"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/SceneDelegate.dia"
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/Network/STTConnectionManager.swift":
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/STTConnectionManager.swiftdeps"
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/STTConnectionManager.swiftconstvalues"
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/STTConnectionManager.o"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/STTConnectionManager.dia"
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/STTConnectionManager.d"
+"/Users/kbh/Desktop/workspace/ClearSense-Minutes/clearsenseminutes/Onboarding/PageContentsViewController.swift":
+  object: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/PageContentsViewController.o"
+  const-values: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/PageContentsViewController.swiftconstvalues"
+  dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/PageContentsViewController.d"
+  swift-dependencies: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/PageContentsViewController.swiftdeps"
+  diagnostics: "/Users/kbh/Desktop/workspace/ClearSense-Minutes/build/clearsenseminutes.build/Debug-iphoneos/clearsenseminutes.build/Objects-normal/arm64/PageContentsViewController.dia"

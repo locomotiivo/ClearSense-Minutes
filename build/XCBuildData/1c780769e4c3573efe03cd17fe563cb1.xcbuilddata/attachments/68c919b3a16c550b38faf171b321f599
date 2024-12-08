@@ -1,0 +1,18 @@
+{
+  "" : {
+    "diagnostics" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/lottie-spm/build/Lottie.build/Debug-iphoneos/_LottieStub.build/Objects-normal/arm64/_LottieStub-master.dia",
+    "emit-module-dependencies" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/lottie-spm/build/Lottie.build/Debug-iphoneos/_LottieStub.build/Objects-normal/arm64/_LottieStub-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/lottie-spm/build/Lottie.build/Debug-iphoneos/_LottieStub.build/Objects-normal/arm64/_LottieStub-master-emit-module.dia",
+    "swift-dependencies" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/lottie-spm/build/Lottie.build/Debug-iphoneos/_LottieStub.build/Objects-normal/arm64/_LottieStub-master.swiftdeps"
+  },
+  "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/lottie-spm/Sources/_LottieStub/Stub.swift" : {
+    "const-values" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/lottie-spm/build/Lottie.build/Debug-iphoneos/_LottieStub.build/Objects-normal/arm64/Stub.swiftconstvalues",
+    "dependencies" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/lottie-spm/build/Lottie.build/Debug-iphoneos/_LottieStub.build/Objects-normal/arm64/Stub.d",
+    "diagnostics" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/lottie-spm/build/Lottie.build/Debug-iphoneos/_LottieStub.build/Objects-normal/arm64/Stub.dia",
+    "index-unit-output-path" : "/Lottie.build/Debug-iphoneos/_LottieStub.build/Objects-normal/arm64/Stub.o",
+    "llvm-bc" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/lottie-spm/build/Lottie.build/Debug-iphoneos/_LottieStub.build/Objects-normal/arm64/Stub.bc",
+    "object" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/lottie-spm/build/Lottie.build/Debug-iphoneos/_LottieStub.build/Objects-normal/arm64/Stub.o",
+    "swift-dependencies" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/lottie-spm/build/Lottie.build/Debug-iphoneos/_LottieStub.build/Objects-normal/arm64/Stub.swiftdeps",
+    "swiftmodule" : "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/lottie-spm/build/Lottie.build/Debug-iphoneos/_LottieStub.build/Objects-normal/arm64/Stub~partial.swiftmodule"
+  }
+}

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		360A07912CEEFCC8003BBF35 /* API.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 360A07902CEEFCC7003BBF35 /* API.xcconfig */; };
+		3608C2142D04820B00A9F953 /* MicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3608C2132D04820B00A9F953 /* MicManager.swift */; };
 		360A07932CF33EE5003BBF35 /* MinuteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360A07922CF33EE5003BBF35 /* MinuteVC.swift */; };
 		360A07982CFD7733003BBF35 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 360A07972CFD7733003BBF35 /* SwiftyJSON */; };
 		36158CBD2B639576009D3DF4 /* ClearSense.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 36158CBC2B639576009D3DF4 /* ClearSense.storekit */; };
@@ -23,10 +23,8 @@
 		3645826F2BA2C4C6005D55AA /* LoadingScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3645826E2BA2C4C6005D55AA /* LoadingScreen.storyboard */; };
 		364F0EB72C4784030026ECA2 /* PretendardGOVVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364F0EB62C4784030026ECA2 /* PretendardGOVVariable.ttf */; };
 		364F0EB92C4786DE0026ECA2 /* STTConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F0EB82C4786DE0026ECA2 /* STTConnectionManager.swift */; };
-		3665A13E2D00633600525D5B /* DBConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665A13D2D00633600525D5B /* DBConnectionManager.swift */; };
 		3680725A2C4E3711000B9A28 /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 368072592C4E3711000B9A28 /* grid.png */; };
 		368182DD2C412D2900F01ACF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860E00032A8A0C2E00F4F224 /* MainViewController.swift */; };
-		368182EB2C4134BF00F01ACF /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 368182EA2C4134BF00F01ACF /* Gifu */; };
 		3681836C2C44E80E00F01ACF /* arrow_down_blk.png in Resources */ = {isa = PBXBuildFile; fileRef = 368182F62C44E80E00F01ACF /* arrow_down_blk.png */; };
 		3681836D2C44E80E00F01ACF /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 368182F72C44E80E00F01ACF /* arrow_down.png */; };
 		368183712C44E80E00F01ACF /* btn_sub.png in Resources */ = {isa = PBXBuildFile; fileRef = 368182FB2C44E80E00F01ACF /* btn_sub.png */; };
@@ -69,11 +67,10 @@
 		368712342BFC4A2900520FEC /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368712332BFC4A2900520FEC /* WebVC.swift */; };
 		368712362BFC4A3900520FEC /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368712352BFC4A3900520FEC /* LoadingIndicator.swift */; };
 		368712382BFC4A7900520FEC /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368712372BFC4A7900520FEC /* BackgroundTimer.swift */; };
-		36A7F2C92B3E9B810049588F /* MicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A7F2C82B3E9B810049588F /* MicManager.swift */; };
+		36CA4A9D2D056FCE00418BA6 /* DBConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3665A13D2D00633600525D5B /* DBConnectionManager.swift */; };
+		36CA4A9F2D05771F00418BA6 /* MinuteCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CA4A9E2D05771500418BA6 /* MinuteCalendar.swift */; };
 		36D3EB502BAD6E1A0017A0F7 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B83EE2B45511F00538BE5 /* LanguageManager.swift */; };
-		36E754262C4BB68F004CD2C1 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 36E754252C4BB68F004CD2C1 /* DropDown */; };
 		36E754282C4BB7E7004CD2C1 /* LicenseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E754272C4BB7E7004CD2C1 /* LicenseVC.swift */; };
-		36E7542A2C4BB92F004CD2C1 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E754292C4BB92F004CD2C1 /* LanguageVC.swift */; };
 		36F561882C9BF63800E7EDBF /* slider_VH_H.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F561852C9BF63800E7EDBF /* slider_VH_H.png */; };
 		36F561892C9BF63800E7EDBF /* circle_fill_H.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F561862C9BF63800E7EDBF /* circle_fill_H.png */; };
 		36F5618A2C9BF63800E7EDBF /* slider_V_H.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F561872C9BF63800E7EDBF /* slider_V_H.png */; };
@@ -127,6 +124,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3608C2132D04820B00A9F953 /* MicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicManager.swift; sourceTree = "<group>"; };
 		360A07902CEEFCC7003BBF35 /* API.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = API.xcconfig; sourceTree = "<group>"; };
 		360A07922CF33EE5003BBF35 /* MinuteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinuteVC.swift; sourceTree = "<group>"; };
 		36158CAB2B5E40CA009D3DF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -189,10 +187,9 @@
 		368712332BFC4A2900520FEC /* WebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		368712352BFC4A3900520FEC /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		368712372BFC4A7900520FEC /* BackgroundTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
-		36A7F2C82B3E9B810049588F /* MicManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicManager.swift; sourceTree = "<group>"; };
 		36C294AB2B5A045800685F26 /* clearsenseminutes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = clearsenseminutes.entitlements; sourceTree = "<group>"; };
+		36CA4A9E2D05771500418BA6 /* MinuteCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinuteCalendar.swift; sourceTree = "<group>"; };
 		36E754272C4BB7E7004CD2C1 /* LicenseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseVC.swift; sourceTree = "<group>"; };
-		36E754292C4BB92F004CD2C1 /* LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
 		36F561852C9BF63800E7EDBF /* slider_VH_H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_VH_H.png; sourceTree = "<group>"; };
 		36F561862C9BF63800E7EDBF /* circle_fill_H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_fill_H.png; sourceTree = "<group>"; };
 		36F561872C9BF63800E7EDBF /* slider_V_H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_V_H.png; sourceTree = "<group>"; };
@@ -234,9 +231,7 @@
 				360A07982CFD7733003BBF35 /* SwiftyJSON in Frameworks */,
 				36158CBF2B6399FA009D3DF4 /* StoreKit.framework in Frameworks */,
 				6C3BB9932CD095F3000BD641 /* Lottie in Frameworks */,
-				36E754262C4BB68F004CD2C1 /* DropDown in Frameworks */,
 				361B84002B4640DD00538BE5 /* TPCircularBuffer in Frameworks */,
-				368182EB2C4134BF00F01ACF /* Gifu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +241,6 @@
 		361B83DC2B452A7200538BE5 /* Popup */ = {
 			isa = PBXGroup;
 			children = (
-				368072582C4E24E2000B9A28 /* Language */,
 				362676542B6A2AE000FBD53E /* License */,
 			);
 			path = Popup;
@@ -303,18 +297,10 @@
 		3667513A2B7F32B200370944 /* AudioManager */ = {
 			isa = PBXGroup;
 			children = (
+				3608C2132D04820B00A9F953 /* MicManager.swift */,
 				368712372BFC4A7900520FEC /* BackgroundTimer.swift */,
-				36A7F2C82B3E9B810049588F /* MicManager.swift */,
 			);
 			path = AudioManager;
-			sourceTree = "<group>";
-		};
-		368072582C4E24E2000B9A28 /* Language */ = {
-			isa = PBXGroup;
-			children = (
-				36E754292C4BB92F004CD2C1 /* LanguageVC.swift */,
-			);
-			path = Language;
 			sourceTree = "<group>";
 		};
 		36C294832B4C403000685F26 /* image */ = {
@@ -372,6 +358,7 @@
 		36E5A85E2B831FB8009F566E /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
+				36CA4A9E2D05771500418BA6 /* MinuteCalendar.swift */,
 				363ADC202D019C28008082E8 /* EmptyMinuteView.swift */,
 				363ADC1F2D019C28008082E8 /* MinuteDetailsVC.swift */,
 				363ADC1E2D019C28008082E8 /* MinuteRow.swift */,
@@ -501,8 +488,6 @@
 			name = clearsenseminutes;
 			packageProductDependencies = (
 				361B83FF2B4640DD00538BE5 /* TPCircularBuffer */,
-				368182EA2C4134BF00F01ACF /* Gifu */,
-				36E754252C4BB68F004CD2C1 /* DropDown */,
 				6C3BB9922CD095F3000BD641 /* Lottie */,
 				360A07972CFD7733003BBF35 /* SwiftyJSON */,
 			);
@@ -518,7 +503,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					860EFFFB2A8A0C2E00F4F224 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -538,8 +523,6 @@
 			mainGroup = 860EFFF32A8A0C2E00F4F224;
 			packageReferences = (
 				361B83FE2B4640DD00538BE5 /* XCRemoteSwiftPackageReference "TPCircularBuffer" */,
-				368182E92C4134BF00F01ACF /* XCRemoteSwiftPackageReference "Gifu" */,
-				36E754242C4BB68E004CD2C1 /* XCRemoteSwiftPackageReference "DropDown" */,
 				6C3BB9912CD095F3000BD641 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				360A07962CFD7733003BBF35 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
@@ -566,7 +549,6 @@
 				368183912C44E80E00F01ACF /* X.png in Resources */,
 				368183B92C44E80E00F01ACF /* headphone.png in Resources */,
 				368183C12C44E80E00F01ACF /* Info.png in Resources */,
-				360A07912CEEFCC8003BBF35 /* API.xcconfig in Resources */,
 				36158CBD2B639576009D3DF4 /* ClearSense.storekit in Resources */,
 				368183B72C44E80E00F01ACF /* info_eq.png in Resources */,
 				368183C92C44E80E00F01ACF /* circle_opt_fill.png in Resources */,
@@ -623,22 +605,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36CA4A9D2D056FCE00418BA6 /* DBConnectionManager.swift in Sources */,
 				368182DD2C412D2900F01ACF /* MainViewController.swift in Sources */,
 				36D3EB502BAD6E1A0017A0F7 /* LanguageManager.swift in Sources */,
 				368712382BFC4A7900520FEC /* BackgroundTimer.swift in Sources */,
-				3665A13E2D00633600525D5B /* DBConnectionManager.swift in Sources */,
 				6C9CE7112CD36EB80072CE15 /* CSLineChart.swift in Sources */,
-				36E7542A2C4BB92F004CD2C1 /* LanguageVC.swift in Sources */,
 				6C94A76A2CDB4C700058A79A /* CSVolumeSlider.swift in Sources */,
 				BF164DDD2C857B5800205035 /* Utils++.swift in Sources */,
 				BF164D942C7EE6F800205035 /* onbordingViewController.swift in Sources */,
 				364582672BA2B942005D55AA /* Constants+Extension.swift in Sources */,
-				36A7F2C92B3E9B810049588F /* MicManager.swift in Sources */,
 				6CDDC75F2CD20E0F001E44E4 /* SettingVC.swift in Sources */,
 				6C9CE7162CD45C070072CE15 /* ChartSkirtView.swift in Sources */,
 				368712362BFC4A3900520FEC /* LoadingIndicator.swift in Sources */,
 				951D24F82C58C59F00907C45 /* Minute.swift in Sources */,
 				360A07932CF33EE5003BBF35 /* MinuteVC.swift in Sources */,
+				3608C2142D04820B00A9F953 /* MicManager.swift in Sources */,
 				368712342BFC4A2900520FEC /* WebVC.swift in Sources */,
 				6C1F71892CCF1FC5008C1606 /* CSSwitch.swift in Sources */,
 				364582692BA2BB6F005D55AA /* LoadingVC.swift in Sources */,
@@ -651,6 +632,7 @@
 				6CDDC7612CD33B13001E44E4 /* CSSlider.swift in Sources */,
 				BF164D8D2C7EE56300205035 /* PageContentsViewController.swift in Sources */,
 				860E00002A8A0C2E00F4F224 /* AppDelegate.swift in Sources */,
+				36CA4A9F2D05771F00418BA6 /* MinuteCalendar.swift in Sources */,
 				364F0EB92C4786DE0026ECA2 /* STTConnectionManager.swift in Sources */,
 				860E00022A8A0C2E00F4F224 /* SceneDelegate.swift in Sources */,
 				36E754282C4BB7E7004CD2C1 /* LicenseVC.swift in Sources */,
@@ -685,6 +667,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -714,13 +698,20 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = clearsenseminute/clearsenseminute.entitlements;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2024.12.09.01;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ZYDXLB884Z;
+				DRIVERKIT_DEPLOYMENT_TARGET = 20.4;
+				ENABLE_DEBUG_DYLIB = YES;
+				ENABLE_ON_DEMAND_RESOURCES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -733,14 +724,47 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_PKGINFO_FILE = YES;
+				INFOPLIST_FILE = clearsenseminutes/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ClearSense Minutes";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "App wants to access your documents folder";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to receive microphone input to process and deliver high-quality audio. mpWAV does not collect microphone data.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need to receive microphone input to process and deliver high-quality audio. mpWAV does not collect microphone data.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INSTALL_PATH = /Applications;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"$(inherited)",
+				);
+				MACH_O_TYPE = mh_execute;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 0.0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Istdc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mpwav.clearsenseminutes;
+				PRODUCT_NAME = "ClearSense Minutes";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 15.6;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
+				WRAPPER_EXTENSION = app;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -748,6 +772,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -777,12 +803,19 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = clearsenseminute/clearsenseminute.entitlements;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2024.12.09.01;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ZYDXLB884Z;
+				DRIVERKIT_DEPLOYMENT_TARGET = 20.4;
+				ENABLE_DEBUG_DYLIB = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_ON_DEMAND_RESOURCES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -790,14 +823,48 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_PKGINFO_FILE = YES;
+				INFOPLIST_FILE = clearsenseminutes/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ClearSense Minutes";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "App wants to access your documents folder";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to receive microphone input to process and deliver high-quality audio. mpWAV does not collect microphone data.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We need to receive microphone input to process and deliver high-quality audio. mpWAV does not collect microphone data.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INSTALL_PATH = /Applications;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"$(inherited)",
+				);
+				MACH_O_TYPE = mh_execute;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 0.0.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Istdc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mpwav.clearsenseminutes;
+				PRODUCT_NAME = "ClearSense Minutes";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 15.6;
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
+				WRAPPER_EXTENSION = app;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -805,7 +872,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 360A07902CEEFCC7003BBF35 /* API.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -818,6 +884,7 @@
 				DEVELOPMENT_TEAM = ZYDXLB884Z;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = clearsenseminutes/Resources/Info.plist;
@@ -863,7 +930,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 360A07902CEEFCC7003BBF35 /* API.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -874,6 +940,7 @@
 				CURRENT_PROJECT_VERSION = 2024.11.21.01;
 				DEVELOPMENT_TEAM = ZYDXLB884Z;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = clearsenseminutes/Resources/Info.plist;
@@ -907,6 +974,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -952,22 +1020,6 @@
 				minimumVersion = 1.6.2;
 			};
 		};
-		368182E92C4134BF00F01ACF /* XCRemoteSwiftPackageReference "Gifu" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kaishin/Gifu";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		36E754242C4BB68E004CD2C1 /* XCRemoteSwiftPackageReference "DropDown" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AssistoLab/DropDown";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		6C3BB9912CD095F3000BD641 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
@@ -988,16 +1040,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 361B83FE2B4640DD00538BE5 /* XCRemoteSwiftPackageReference "TPCircularBuffer" */;
 			productName = TPCircularBuffer;
-		};
-		368182EA2C4134BF00F01ACF /* Gifu */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 368182E92C4134BF00F01ACF /* XCRemoteSwiftPackageReference "Gifu" */;
-			productName = Gifu;
-		};
-		36E754252C4BB68F004CD2C1 /* DropDown */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 36E754242C4BB68E004CD2C1 /* XCRemoteSwiftPackageReference "DropDown" */;
-			productName = DropDown;
 		};
 		6C3BB9922CD095F3000BD641 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

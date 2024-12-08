@@ -163,7 +163,7 @@ class LanguageLogo: UIImageView {
     }
     
     func centerVerticalText() {
-        var topCorrect = (self.bounds.size.height - self.contentSize.height * self.zoomScale) / 2
+        let topCorrect = (self.bounds.size.height - self.contentSize.height * self.zoomScale) / 2
         top = topCorrect < 0.0 ? 0.0 : topCorrect
     }
  }

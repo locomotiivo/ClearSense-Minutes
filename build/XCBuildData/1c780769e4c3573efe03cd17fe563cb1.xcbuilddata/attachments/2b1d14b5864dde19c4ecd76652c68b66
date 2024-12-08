@@ -1,0 +1,4 @@
+module CTPCircularBuffer {
+umbrella "/Users/kbh/Library/Developer/Xcode/DerivedData/clearsenseminutes-gsslswwxipxfnrhaizbzdbdvmxkl/SourcePackages/checkouts/TPCircularBuffer"
+export *
+}

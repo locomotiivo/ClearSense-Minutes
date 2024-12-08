@@ -3,12 +3,77 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "STTConnectionManager.send(pcmBuffer:):STTConnectionManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "buffer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SSTConnectionManager.connect():SSTConnectionManager.swift">
          <PersistentStrings>
             <PersistentString
                value = "urlSession">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MinuteDetailsVC.viewDidLoad():MinuteDetailsVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MinuteVC.checkNoEntry():MinuteVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in variable initialization expression of AUConvertCallback:MicManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AudioEngineManager.recordCallback(inRefCon:ioActionFlags:inTimeStamp:inBusNumber:inNumberFrames:ioData:):MicManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DBConnectionManager.DBRequest(_:_:completionBlock:):DBConnectionManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DBConnectionManager.DBRequest(_:_:_:_:completionBlock:):DBConnectionManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "paramData.rawData()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "specialized AudioEngineManager.convertCallback(converter:inNumberDataPackets:ioData:outDataPacketDescription:inUserData:):MicManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "inNumberDataPackets">
+            </PersistentString>
+            <PersistentString
+               value = "CHANNEL_MONO * bytesPerBuffer / outputFormat.mBytesPerPacket">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "specialized AudioEngineManager.recordCallback(inRefCon:ioActionFlags:inTimeStamp:inBusNumber:inNumberFrames:ioData:):MicManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DBConnectionManager.DBRequest(_:_:):DBConnectionManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AudioEngineManager.processData():MicManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "packetSizeOut">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MinuteVC.doQuery():MinuteVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AudioEngineManager.shared.unsafeMutableAddressor:MicManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MinuteVC.doQuery():MinuteVC.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
