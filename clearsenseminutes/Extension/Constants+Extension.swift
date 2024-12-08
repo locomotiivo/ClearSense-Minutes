@@ -16,6 +16,7 @@ var mpWAVURL = URL(string: NSSearchPathForDirectoriesInDomains(.documentDirector
 
 let formatterISO = DateFormatter()
 let formatterTxt = DateFormatter()
+let formatterFile = DateFormatter()
 
 var audioEngine : AudioEngineManager = AudioEngineManager.shared
 var DBconn : DBConnectionManager = DBConnectionManager.shared

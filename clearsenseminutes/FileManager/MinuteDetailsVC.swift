@@ -10,14 +10,14 @@ import OSLog
 import SwiftyJSON
 import Foundation
 
-class MinuteDetailsVC: UIViewController {
+class MinuteDetailsVC: UIViewController, UIPopoverPresentationControllerDelegate {
     var id: String = ""
     
     @IBOutlet weak var minute_title: UITextField!
     @IBOutlet weak var minute_company: UITextField!
 
     @IBOutlet weak var minute_date: UILabel!
-    @IBOutlet weak var minute_text: UITextView!
+    @IBOutlet weak var minute_text: MPTextView!
     
     @IBOutlet weak var btn_edit: LanguageButton!
     @IBOutlet weak var btn_done: LanguageButton!
@@ -33,11 +33,16 @@ class MinuteDetailsVC: UIViewController {
         btn_edit.isHidden = false
         btn_done.isHidden = true
 
+        minute_title.delegate = self
+        minute_company.delegate = self
+        
+        LoadingIndicator.showLoading()
         doQuery()
+        LoadingIndicator.hideLoading()
         
         NotificationCenter.default.addObserver(self, selector: #selector(onChangeDate), name: AppNotification.changeDate, object: nil)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onClickDate))
-        minute_date.addGestureRecognizer(tapGesture)
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        minute_date.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClickDate)))
     }
     
     func doQuery() {
@@ -178,7 +183,24 @@ class MinuteDetailsVC: UIViewController {
     }
     
     @objc func onClickDate(_ sender: Any) {
-        
+        guard editMode,
+              let vc = self.storyboard?.instantiateViewController(identifier: "MinuteCalendar") as? MinuteCalendar
+        else { return }
+        vc.date = dateTime
+        vc.delegate = self
+        vc.modalPresentationStyle = .popover
+        vc.modalTransitionStyle = .crossDissolve
+        vc.view.backgroundColor = .black.withAlphaComponent(0.6)
+        vc.view.layer.cornerRadius = 8
+        present(vc, animated: true, completion: nil)
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+    }
+
+    func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
+        return true
     }
     
     @objc func onChangeDate(_ sender: NSNotification) {
@@ -187,5 +209,16 @@ class MinuteDetailsVC: UIViewController {
         }
         dateTime = date
         minute_date.text = formatterTxt.string(from: date)
+    }
+}
+
+extension MinuteDetailsVC : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

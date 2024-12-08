@@ -101,11 +101,13 @@ class MinuteVC: UIViewController {
     @objc func doQuery() {
         // 파일 데이터
         list.removeAll()
+        LoadingIndicator.showLoading()
         do {
             try DBconn.DBRequest("GET", false, "/meetings/get-all-records/", [:]) { [weak self]
                 (flag, res, msg, data) in
                 guard flag,
                 let data = data else {
+                    LoadingIndicator.hideLoading()
                     self?.Alert("ERROR".localized(), msg, nil)
                     return
                 }
@@ -119,23 +121,30 @@ class MinuteVC: UIViewController {
                           let company = item["company_name"].string,
                           let date = item["meeting_datetime"].string,
                           let dt = formatterISO.date(from: date) else {
+                        LoadingIndicator.hideLoading()
                         self?.Alert("ERROR".localized(), msg ?? "", nil)
                         return
                     }
                     self?.list.append(Minute(id: String(id), title: title, company: company, text: "", date: dt, idx: i))
                 }
                 self?.checkNoEntry()
+                LoadingIndicator.hideLoading()
             }
         }
         catch DBRequestError.invalidURL(let err) {
+            LoadingIndicator.hideLoading()
             Alert("ERROR".localized(), err, nil)
         } catch DBRequestError.missingData(let err) {
+            LoadingIndicator.hideLoading()
             Alert("ERROR".localized(), err, nil)
         } catch DBRequestError.AccessDenied(let err) {
+            LoadingIndicator.hideLoading()
             Alert("ERROR".localized(), err, nil)
         } catch DBRequestError.ErrorCode(let err) {
+            LoadingIndicator.hideLoading()
             Alert("ERROR".localized(), err, nil)
         } catch (let err) {
+            LoadingIndicator.hideLoading()
             Alert("ERROR".localized(), err.localizedDescription, nil)
         }
     }
@@ -171,6 +180,7 @@ class MinuteVC: UIViewController {
     // 편집모드 종료
     @objc func endEdit() {
         isEditMode = false
+        doQuery()
     }
     
     // MARK: - Function
@@ -246,6 +256,7 @@ class MinuteVC: UIViewController {
     
     // 파일 삭제
     private func deleteMinute() {
+        LoadingIndicator.showLoading()
         var success = true
         var title : String = ""
         var message = ""
@@ -274,7 +285,8 @@ class MinuteVC: UIViewController {
                 success = false
                 message = err
             } catch DBRequestError.ErrorCode(let err) {
-                Alert("ERROR".localized(), err, nil)
+                success = false
+                message = err
             } catch (let err) {
                 success = false
                 message = err.localizedDescription
@@ -287,10 +299,12 @@ class MinuteVC: UIViewController {
         }
         
         if success {
+            LoadingIndicator.hideLoading()
             Alert("DELETE_SUCCESS".localized(), message) {
                 self.doQuery()
             }
         } else {
+            LoadingIndicator.hideLoading()
             Alert("ERROR".localized(), "Error Deleting \(title.count < 10 ? title : title.prefix(10) + "...") : \(message)", nil)
         }
     }

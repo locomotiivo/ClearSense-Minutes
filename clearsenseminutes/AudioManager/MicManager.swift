@@ -69,24 +69,17 @@ private let AUrenderCallback: AURenderCallback = {(inRefCon,
     return result
 }
 
-private struct AUConvertBuffer {
-    var inputFormat: AudioStreamBasicDescription!
-    var srcSizePerPacket: UInt32 = 0
-    var dataL: UnsafeMutablePointer<CChar>?
-    var dataR: UnsafeMutablePointer<CChar>?
-    var srcBufferSize: UInt32 = 0
-}
-
 class AudioEngineManager : AURecordCallbackDelegate,
                            AURenderCallbackDelegate {
     
     static let shared = AudioEngineManager()
-    private var mutex: pthread_mutex_t = pthread_mutex_t()
-    
+    private var mutexFile: pthread_mutex_t = pthread_mutex_t()
+    private var mutexTPC: pthread_mutex_t = pthread_mutex_t()
+
     let samples = 128
     var sampleRate : Double = 48000
     let SAMPLE_RATE : Double = 16000
-    let AMPLIFY_CONST : Float = 1.5
+    let AMPLIFY_CONST : Float = 2
     private let bytesPerBufferIn = 128 * MemoryLayout<Float32>.size
     private let bytesPerBufferOut = 128 * MemoryLayout<Int16>.size
     private let packetSizeIn = MemoryLayout<Float32>.size
@@ -113,7 +106,6 @@ class AudioEngineManager : AURecordCallbackDelegate,
     
     private let ASBDsize : UInt32 = UInt32(MemoryLayout<AudioStreamBasicDescription>.size)
     private var inputFormat : AudioStreamBasicDescription!
-    private var outputFormat : AudioStreamBasicDescription!
     private var inFormat : AVAudioFormat!
     private var outFormat : AVAudioFormat!
 
@@ -123,13 +115,15 @@ class AudioEngineManager : AURecordCallbackDelegate,
 
     static var iterConvert: UInt64 = 0
     static var iterRecord: UInt64 = 0
+    var isRecording = false { didSet { print("isRecording: \(isRecording)") } }
     
     init() {
         rBufferIn = TPCircularBuffer()
         rBufferOut = TPCircularBuffer()
         setupAudioSession()
         setupAudioUnit()
-        pthread_mutex_init(&mutex, nil)
+        pthread_mutex_init(&mutexFile, nil)
+        pthread_mutex_init(&mutexTPC, nil)
     }
 
     private func setupAudioSession() {
@@ -219,13 +213,13 @@ class AudioEngineManager : AURecordCallbackDelegate,
                 }
                 
 #if DEBUG
-                if 0 == pthread_mutex_trylock(&mutex) {
+                if isRecording && 0 == pthread_mutex_trylock(&mutexFile) {
                     err = ExtAudioFileWriteAsync(destFile!, inNumberFrames, bufferList.unsafePointer)
                     if err != noErr {
                         let messages = "Error while writing to file: \(err.description)"
                         os_log(.error, log: .audio, "%@", messages)
                     }
-                    pthread_mutex_unlock(&mutex)
+                    pthread_mutex_unlock(&mutexFile)
                 }
 #endif
             }
@@ -284,55 +278,63 @@ class AudioEngineManager : AURecordCallbackDelegate,
         let srcBufferIn = TPCircularBufferTail(&rBufferIn, &availableBytes)
         guard let ptrIn = srcBufferIn?.assumingMemoryBound(to: Float32.self) else {return}
         if (availableBytes >= neededBytes) {
-            var dataL = [Float32](repeating: 0, count: samples)
-            var dataR = [Float32](repeating: 0, count: samples)
-            for i in 0..<Int(samples) {
-                dataL[i] = ptrIn[i] * AMPLIFY_CONST
-                dataR[i] = ptrIn[i + samples] * AMPLIFY_CONST
-            }
-            
-            var outputData = [Float32](repeating: 0, count: samples * 2)
-            for i in 0..<Int(samples * 2) {
-                outputData[i] = ptrIn[i]
-            }
-            
-            dataL.withUnsafeMutableBufferPointer { bytesL in
-                dataR.withUnsafeMutableBufferPointer { bytesR in
-                    var bufferList = AudioBufferList.allocate(maximumBuffers: 2)
-                    bufferList[0] = AudioBuffer(mNumberChannels: 1, mDataByteSize: UInt32(bytesPerBufferIn), mData: bytesL.baseAddress)
-                    bufferList[1] = AudioBuffer(mNumberChannels: 1, mDataByteSize: UInt32(bytesPerBufferIn), mData: bytesR.baseAddress)
-                    defer { bufferList.unsafeMutablePointer.deallocate() }
-                    let pcmBuffer = AVAudioPCMBuffer(pcmFormat: inFormat, bufferListNoCopy: bufferList.unsafeMutablePointer)!
-                    
-                    if let convertedBuffer = convertBuffer(buffer: pcmBuffer, from: pcmBuffer.format, to: outFormat) {
-                        STTconn.send(pcmBuffer: convertedBuffer)
+            if 0 == pthread_mutex_trylock(&mutexTPC) {
+                var dataL = [Float32](repeating: 0, count: samples)
+                var dataR = [Float32](repeating: 0, count: samples)
+                for i in 0..<Int(samples) {
+                    dataL[i] = ptrIn[i] * AMPLIFY_CONST
+                    dataR[i] = ptrIn[i + samples] * AMPLIFY_CONST
+                }
+                
+                var outputData = [Float32](repeating: 0, count: samples * 2)
+                for i in 0..<Int(samples * 2) {
+                    outputData[i] = ptrIn[i]
+                }
+                
+                dataL.withUnsafeMutableBufferPointer { bytesL in
+                    dataR.withUnsafeMutableBufferPointer { bytesR in
+                        var bufferList = AudioBufferList.allocate(maximumBuffers: 2)
+                        bufferList[0] = AudioBuffer(mNumberChannels: 1, mDataByteSize: UInt32(bytesPerBufferIn), mData: bytesL.baseAddress)
+                        bufferList[1] = AudioBuffer(mNumberChannels: 1, mDataByteSize: UInt32(bytesPerBufferIn), mData: bytesR.baseAddress)
+                        defer { bufferList.unsafeMutablePointer.deallocate() }
+                        let pcmBuffer = AVAudioPCMBuffer(pcmFormat: inFormat, bufferListNoCopy: bufferList.unsafeMutablePointer)!
+                        
+                        if let convertedBuffer = convertBuffer(buffer: pcmBuffer, from: pcmBuffer.format, to: outFormat) {
+                            STTconn.send(pcmBuffer: convertedBuffer)
+                        }
                     }
                 }
+                
+                let neededBytesOut = neededBytes
+                var availableBytesOut: UInt32 = 0
+                let dstBuffer = TPCircularBufferHead(&rBufferOut, &availableBytesOut)
+                if (availableBytesOut >= neededBytesOut) {
+                    memcpy((dstBuffer!), &outputData, Int(neededBytesOut))
+                    TPCircularBufferProduce(&rBufferOut, neededBytesOut)
+                }
+                
+                TPCircularBufferConsume(&rBufferIn, neededBytes)
             }
-            
-            let neededBytesOut = neededBytes
-            var availableBytesOut: UInt32 = 0
-            let dstBuffer = TPCircularBufferHead(&rBufferOut, &availableBytesOut)
-            if (availableBytesOut >= neededBytesOut) {
-                memcpy((dstBuffer!), &outputData, Int(neededBytesOut))
-                TPCircularBufferProduce(&rBufferOut, neededBytesOut)
-            }
-            
-            TPCircularBufferConsume(&rBufferIn, neededBytes)
+            pthread_mutex_unlock(&mutexTPC)
         }
     }
     
     private func convertBuffer(buffer: AVAudioPCMBuffer,
                                from inputFormat: AVAudioFormat,
                                to outputFormat: AVAudioFormat) -> AVAudioPCMBuffer? {
+        var data = false
         let inputCallback: AVAudioConverterInputBlock = { inNumPackets, outStatus in
+            if data {
+                outStatus.pointee = .noDataNow
+                return nil
+            }
+            data = true
             outStatus.pointee = .haveData
             return buffer
         }
         
-        let convertedBuffer = AVAudioPCMBuffer(pcmFormat: outputFormat,
-                                               frameCapacity: AVAudioFrameCount(outputFormat.sampleRate) *
-                                               buffer.frameLength / AVAudioFrameCount(buffer.format.sampleRate))!
+        let capacity = UInt32(Double(buffer.frameCapacity) * sampleRate / SAMPLE_RATE)
+        let convertedBuffer = AVAudioPCMBuffer(pcmFormat: outputFormat, frameCapacity: capacity)!
         
         var error: NSError?
         _ = AUConvert.convert(to: convertedBuffer, error: &error, withInputFrom: inputCallback)
@@ -369,17 +371,6 @@ class AudioEngineManager : AURecordCallbackDelegate,
             mBitsPerChannel: 32,
             mReserved: 0)
         
-        outputFormat = AudioStreamBasicDescription(
-            mSampleRate: SAMPLE_RATE,
-            mFormatID: kAudioFormatLinearPCM,
-            mFormatFlags: kAudioFormatFlagIsPacked | kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsNonInterleaved,
-            mBytesPerPacket: UInt32(packetSizeOut) ,  // Assuming each sample is 4 bytes for 32-bit float
-            mFramesPerPacket: 1,           // For PCM, this should be 1
-            mBytesPerFrame: UInt32(packetSizeOut) ,   // Each frame will have 'channel' number of samples
-            mChannelsPerFrame: 1,
-            mBitsPerChannel: 16,
-            mReserved: 0)
-
         // MARK: set MaximumFramesPerSlice
         var frameCount: UInt32 = UInt32(maxFrames)
         err = AudioUnitSetProperty(AUInput!,
@@ -412,7 +403,7 @@ class AudioEngineManager : AURecordCallbackDelegate,
                                    &turnOn,
                                    UInt32(MemoryLayout<UInt32>.size))
         
-        // MARK: apply format
+        // MARK: apply format & converter
         err = AudioUnitSetProperty(AUInput!,
                                    kAudioUnitProperty_StreamFormat,
                                    kAudioUnitScope_Input,
@@ -459,21 +450,23 @@ class AudioEngineManager : AURecordCallbackDelegate,
                              UInt32(MemoryLayout<AURenderCallbackStruct>.size))
         
 #if DEBUG
-        // MARK: Set Rendering callback
-        var renderCallbackStruct = AURenderCallbackStruct(
-            inputProc: AUrenderCallback,
-            inputProcRefCon: Unmanaged.passUnretained(self).toOpaque()
-        )
-        err = AudioUnitSetProperty(AUInput!,
-                             kAudioUnitProperty_SetRenderCallback,
-                             kAudioUnitScope_Global,
-                             0,
-                             &renderCallbackStruct,
-                             UInt32(MemoryLayout<AURenderCallbackStruct>.size))
-        
-        if err != noErr {
-            let messages = "Error setting up AU: \(err.description)"
-            os_log(.error, log: .audio, "%@", messages)
+        if isRecording {
+            // MARK: Set Rendering callback
+            var renderCallbackStruct = AURenderCallbackStruct(
+                inputProc: AUrenderCallback,
+                inputProcRefCon: Unmanaged.passUnretained(self).toOpaque()
+            )
+            err = AudioUnitSetProperty(AUInput!,
+                                 kAudioUnitProperty_SetRenderCallback,
+                                 kAudioUnitScope_Global,
+                                 0,
+                                 &renderCallbackStruct,
+                                 UInt32(MemoryLayout<AURenderCallbackStruct>.size))
+            
+            if err != noErr {
+                let messages = "Error setting up AU: \(err.description)"
+                os_log(.error, log: .audio, "%@", messages)
+            }
         }
 #endif
         err = AudioUnitInitialize(AUInput!)
@@ -538,10 +531,7 @@ class AudioEngineManager : AURecordCallbackDelegate,
     private func createFile() {
         // MARK: create Record Output File
         let docURL = mpWAVURL
-        formatterTxt.dateFormat = "yyyyMMdd_HHmmss"
-        let dateStr = formatterTxt.string(from: Date())
-        destFileName = "\(dateStr)"
-        
+        destFileName = formatterFile.string(from: Date())
         let filePath = docURL.path.appending("/\(destFileName).m4a")
         destFileURL = URL(fileURLWithPath: filePath)
         
@@ -596,11 +586,13 @@ class AudioEngineManager : AURecordCallbackDelegate,
     func start_audio_unit(){
         isRunning = true
         
-        _TPCircularBufferInit(&rBufferIn, 3 * UInt32(bytesPerBufferIn), MemoryLayout<TPCircularBuffer>.size)
-        _TPCircularBufferInit(&rBufferOut, 3 * UInt32(bytesPerBufferIn), MemoryLayout<TPCircularBuffer>.size)
+        _TPCircularBufferInit(&rBufferIn, 16 * UInt32(bytesPerBufferIn), MemoryLayout<TPCircularBuffer>.size)
+        _TPCircularBufferInit(&rBufferOut, 16 * UInt32(bytesPerBufferIn), MemoryLayout<TPCircularBuffer>.size)
         
 #if DEBUG
-        createFile()
+        if isRecording {
+            createFile()
+        }
 #endif
         // 5. 오디오 유닛 시작
         AudioOutputUnitStart(AUInput!)
@@ -632,20 +624,25 @@ class AudioEngineManager : AURecordCallbackDelegate,
         } else {
             os_log(.info, log: .audio, "AU Stopped")
         }
+        
+        pthread_mutex_lock(&mutexTPC)
         TPCircularBufferCleanup(&rBufferIn)
         TPCircularBufferCleanup(&rBufferOut)
-        
+        pthread_mutex_unlock(&mutexTPC)
+
 #if DEBUG
-        finishRecording()
+        if isRecording {
+            finishRecording()
+        }
 #endif
     }
     
     func finishRecording() {
         var err : OSStatus = noErr
         if let destFile = destFile {
-            pthread_mutex_lock(&mutex)
+            pthread_mutex_lock(&mutexFile)
             err = ExtAudioFileDispose(destFile)
-            pthread_mutex_unlock(&mutex)
+            pthread_mutex_unlock(&mutexFile)
             if err != noErr {
                 let messages = "Error disposing existing file \(destFileName): \(err.description)"
                 os_log(.error, log: .audio, "%@", messages)

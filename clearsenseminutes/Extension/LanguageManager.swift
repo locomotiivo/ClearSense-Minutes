@@ -123,7 +123,7 @@ class LanguageLogo: UIImageView {
     }
 }
 
-@IBDesignable open class MPTextView : UITextView {
+@IBDesignable class MPTextView : UITextView {
     @IBInspectable open var top: CGFloat = 15 {
         didSet {
             refresh()
@@ -163,7 +163,8 @@ class LanguageLogo: UIImageView {
     }
     
     func centerVerticalText() {
-        let topCorrect = (self.bounds.size.height - self.contentSize.height * self.zoomScale) / 2
-        top = topCorrect < 0.0 ? 0.0 : topCorrect
+        let topCorrection = (bounds.size.height - contentSize.height * zoomScale) / 2
+        top = max(0, topCorrection)
+        contentInset = UIEdgeInsets(top: topCorrection, left: 0, bottom: 0, right: 0)
     }
  }

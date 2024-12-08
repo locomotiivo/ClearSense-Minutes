@@ -75,11 +75,8 @@ class LicenseVC: UIViewController {
         
         // 오픈소스 데이터 배열
         let openSourceLibraries = [
-            ("abseil-cpp-binary", "1.2024011602.0", "https://github.com/google/abseil-cpp-binary"),
-            ("AppCheck", "11.0.1", "https://github.com/google/app-check"),
-            ("DropDown", "", "https://github.com/AssistoLab/DropDown"),
-            ("Firebase", "11.0.0", "https://github.com/firebase/firebase-ios-sdk"),
-            ("Gifu", "", "https://github.com/kaishin/Gifu"),
+            ("Lottie", "4.5.0", "https://github.com/airbnb/lottie-spm"),
+            ("SwiftyJSON", "5.0.2", "https://github.com/SwiftyJSON/SwiftyJSON"),
             ("TPCircularBuffer", "1.6.2", "https://github.com/michaeltyson/TPCircularBuffer"),
         ]
         
@@ -108,7 +105,6 @@ class LicenseVC: UIViewController {
             itemStackView.spacing = 5
             stackView.addArrangedSubview(itemStackView)
         }
-        
     }
     
     @objc func urlTapped(_ sender: UITapGestureRecognizer) {

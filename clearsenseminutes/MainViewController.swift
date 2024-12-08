@@ -135,9 +135,9 @@ class MainViewController: UIViewController {
         companyLabel.isUserInteractionEnabled = true
         
         // Initial Text View
-        minuteView.centerVerticalText()
         minuteView.isHidden = true
         emptyTextView.isHidden = false
+        emptyTextView.centerVerticalText()
     }
     
     // MARK: - IBAction
@@ -150,9 +150,9 @@ class MainViewController: UIViewController {
     // 마이크 버튼 클릭 이벤트
     @IBAction func onClickMic(_ sender: UIButton) {
         if audioEngine.isRunning {
-            togglePlayback(false)
+            toggleAudio(false)
         } else {
-            togglePlayback(true)
+            toggleAudio(true)
         }
     }
     
@@ -164,7 +164,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Function
     // 재생 / 정지
-    private func togglePlayback(_ flag: Bool) {
+    private func toggleAudio(_ flag: Bool) {
         if flag {
             // Connect to STT Server
             do {
@@ -202,7 +202,7 @@ class MainViewController: UIViewController {
             // 인터럽트가 걸렸을 때 잠시 정지
             os_log(.info, log: .audio, "audio interruption started")
             if audioEngine.isRunning {
-                togglePlayback(false)
+                toggleAudio(false)
             }
         case .ended:
             // 인터럽트가 종료됐으면 다시 재생
@@ -210,7 +210,7 @@ class MainViewController: UIViewController {
             let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
             if options.contains(.shouldResume) {
                 os_log(.info, log: .audio, "audio interruption ended. Continuing playback")
-                togglePlayback(true)
+                toggleAudio(true)
             } else {
                 os_log(.info, log: .audio, "audio interruption ended")
             }
@@ -230,13 +230,13 @@ class MainViewController: UIViewController {
         case .newDeviceAvailable:
             os_log(.info, log: .audio, "new device plugged in")
             if audioEngine.isRunning {
-                togglePlayback(false)
+                toggleAudio(false)
             }
             checkHeadphoneConnected()
         case .oldDeviceUnavailable:
             os_log(.info, log: .audio, "device pulled out")
             if audioEngine.isRunning {
-                togglePlayback(false)
+                toggleAudio(false)
             }
             checkHeadphoneConnected()
         default: break
@@ -353,6 +353,8 @@ extension MainViewController : STTDelegate {
                 return
             }
             self.minuteView.text = text
+            let range = NSMakeRange(self.minuteView.text.count - 1, 0)
+            self.minuteView.scrollRangeToVisible(range)
         }
     }
     
@@ -367,6 +369,8 @@ extension MainViewController : STTDelegate {
                 return
             }
             self.minuteView.text = text
+            let range = NSMakeRange(self.minuteView.text.count - 1, 0)
+            self.minuteView.scrollRangeToVisible(range)
         }
     }
     
@@ -376,6 +380,14 @@ extension MainViewController : STTDelegate {
             let message = "ERROR IN STTConnectionManager: \(message)"
             os_log(.error, log: .system, "%@", message)
             self.Alert("ERROR".localized(), message, nil)
+        }
+    }
+    
+    func STTDisconnect() {
+        DispatchQueue.main.async {
+            if audioEngine.isRunning {
+                self.toggleAudio(false)
+            }
         }
     }
 }

@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         formatterISO.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         formatterTxt.dateFormat = "yyyy/MM/dd"
+        formatterFile.dateFormat = "yyyyMMdd_HHmmss"
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()

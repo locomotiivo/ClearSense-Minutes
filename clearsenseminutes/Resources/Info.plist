@@ -5,7 +5,7 @@
 	<key>DBURL</key>
 	<string>http://$(DB_ID).ap-northeast-2.compute.amazonaws.com:$(DB_PORT)</string>
 	<key>STTURL</key>
-	<string>ws://horseymask.com/v1/audio/transcriptions?model=$(MODEL)&amp;language=ko&amp;response_format=json&amp;temperature=0</string>
+	<string>ws://horseymask.com/v1/audio/transcriptions?model=$(MODEL)&amp;language=ko&amp;response_format=json&amp;temperature=0&amp;vad_filter=true</string>
 	<key>WebURL</key>
 	<string>https://$(WEB_URL)/bbs/content.php?co_id=</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>

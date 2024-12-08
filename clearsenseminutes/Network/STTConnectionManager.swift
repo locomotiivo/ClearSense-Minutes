@@ -15,6 +15,7 @@ import OSLog
     func STTCallback(text: String)
     func STTCallback(data: Data)
     func STTError(message: String)
+    func STTDisconnect()
 }
 
 enum STTRequestError: Error {
@@ -133,6 +134,7 @@ class STTConnectionManager: NSObject, URLSessionWebSocketDelegate, URLSessionDel
 
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?) {
         isConnected = false
+        self.STTDelegate?.STTDisconnect()
     }
 
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {

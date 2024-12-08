@@ -19,21 +19,26 @@ class MinuteCalendar: UIViewController {
     
     var selectedDate: DateComponents?
     var date: Date?
+    var delegate: UIPopoverPresentationControllerDelegate?
     
+    @IBOutlet weak var containerView: UICalendarView!
+    @IBOutlet weak var popUpView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarView.delegate = self
         
-        view.addSubview(calendarView)
+        containerView.addSubview(calendarView)
         
         calendarView.delegate = self
         let dateSelection = UICalendarSelectionSingleDate(delegate: self)
         calendarView.selectionBehavior = dateSelection
         
         let calendarViewConstraints = [
-            calendarView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            calendarView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            calendarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor )
+            calendarView.leadingAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.leadingAnchor),
+            calendarView.trailingAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.trailingAnchor),
+            calendarView.topAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.topAnchor),
+            calendarView.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor)
         ]
         NSLayoutConstraint.activate(calendarViewConstraints)
         
@@ -47,11 +52,17 @@ class MinuteCalendar: UIViewController {
     }
         
     @IBAction func onClickClose(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func onClickApply(_ sender: Any) {
         guard let date = date else {
             Alert("ERROR".localized(), "Must Select Date", nil)
             return
         }
-        
+        let dict : [String: Date] = ["date": date]
+        NotificationCenter.default.post(name: AppNotification.changeDate , object: nil, userInfo: dict)
+        self.dismiss(animated: true)
     }
 }
 
