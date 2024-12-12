@@ -300,7 +300,8 @@ class AudioEngineManager : AURecordCallbackDelegate,
                         let pcmBuffer = AVAudioPCMBuffer(pcmFormat: inFormat, bufferListNoCopy: bufferList.unsafeMutablePointer)!
                         
                         if let convertedBuffer = convertBuffer(buffer: pcmBuffer, from: pcmBuffer.format, to: outFormat) {
-                            STTconn.send(pcmBuffer: convertedBuffer)
+                            STTConn.request(pcmBuffer: convertedBuffer)
+                            //                            STTconn.send(pcmBuffer: convertedBuffer)
                         }
                     }
                 }

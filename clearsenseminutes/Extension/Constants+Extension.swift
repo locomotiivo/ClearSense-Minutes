@@ -19,8 +19,9 @@ let formatterTxt = DateFormatter()
 let formatterFile = DateFormatter()
 
 var audioEngine : AudioEngineManager = AudioEngineManager.shared
-var DBconn : DBConnectionManager = DBConnectionManager.shared
-var STTconn : STTConnectionManager = STTConnectionManager.shared
+var DBManager : DBConnectionManager = DBConnectionManager.shared
+var STTConn : WS!
+var DBConn : WS!
 
 struct AppNotification{
     static let changeLanguage = Notification.Name("changeLanguage")

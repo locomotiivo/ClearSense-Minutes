@@ -47,7 +47,7 @@ class MinuteDetailsVC: UIViewController, UIPopoverPresentationControllerDelegate
     
     func doQuery() {
         do {
-            try DBconn.DBRequest("GET", false, "/meetings/get-record/\(self.id)", [:]) { [weak self]
+            try DBManager.DBRequest("GET", false, "/meetings/get-record/\(self.id)", [:]) { [weak self]
                 (flag, res, msg, data) in
                 guard flag,
                 let data = data else {
@@ -62,7 +62,7 @@ class MinuteDetailsVC: UIViewController, UIPopoverPresentationControllerDelegate
                    let date = json["meeting_datetime"].string,
                    let dt = formatterISO.date(from: date) {
                     do {
-                        try DBconn.DBRequest("GET", true, urlstr, [:]) { [weak self]
+                        try DBManager.DBRequest("GET", true, urlstr, [:]) { [weak self]
                             (flag, res, msg, data) in
                             guard flag,
                                   let data = data,
@@ -109,7 +109,7 @@ class MinuteDetailsVC: UIViewController, UIPopoverPresentationControllerDelegate
     
     @IBAction func onClickDone(_ sender: Any) {
         do {
-            try DBconn.DBRequest("PUT", false, "/meetings/update-record/\(id)", ["meeting-id": id, "update_data" : ["company_name": minute_company.text ?? "", "meeting_name": minute_title.text ?? "", "meeting_datetime": formatterISO.string(from: dateTime)]]) { [weak self]
+            try DBManager.DBRequest("PUT", false, "/meetings/update-record/\(id)", ["meeting-id": id, "update_data" : ["company_name": minute_company.text ?? "", "meeting_name": minute_title.text ?? "", "meeting_datetime": formatterISO.string(from: dateTime)]]) { [weak self]
                 (flag, res, msg, data) in
                 guard flag,
                       let data = data,
@@ -149,7 +149,7 @@ class MinuteDetailsVC: UIViewController, UIPopoverPresentationControllerDelegate
     @IBAction func onClickDelete(_ sender: Any) {
         Alert("DELETE_CONFIRM".localized(), "", { [weak self] in
             do {
-                try DBconn.DBRequest("DELETE", false, "/meetings/delete-record/\(self?.id ?? "")", [:]) { [weak self]
+                try DBManager.DBRequest("DELETE", false, "/meetings/delete-record/\(self?.id ?? "")", [:]) { [weak self]
                     (flag, res, msg, data) in
                     guard flag,
                           let data = data,

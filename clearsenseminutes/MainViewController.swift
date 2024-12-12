@@ -14,9 +14,10 @@ import MediaPlayer
 import Dispatch
 import AVKit
 import OSLog
-import CoreData
+import Starscream
 
 class MainViewController: UIViewController {
+    
     
     @IBOutlet weak var bgView: UIView!
     
@@ -32,7 +33,6 @@ class MainViewController: UIViewController {
     var avPlayer: AVPlayer!
     var avPlayerLayer: AVPlayerLayer!
     
-    var container: NSPersistentContainer!
 //    var didShowNotice: Bool = false         // 공지사항은 앱 킬때, 한번만
     var isHeadphoneConnected: Bool = false  // 헤드폰 연결 여부
     var isBackground: Bool = false          // 백그라운드 상태인지 여부
@@ -40,26 +40,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var emptyTextView: MPTextView!
     @IBOutlet weak var minuteView: MPTextView!
     
+    var isDBConnected: Bool = false
+    var isSTTConnected: Bool = false
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        STTconn.setDelegate(self)
-        
-        // 저장해뒀던 데이터 불러와 세팅
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        container = appDelegate.persistentContainer
-        do {
-            let flags = try container.viewContext.fetch(Flag.fetchRequest())
-            os_log(.debug, "Flags: \(flags.count)")
-            
-            if flags.count > 0 {
-                let flag = flags[0]
-                lan = flag.lan ?? lan
-            }
-        } catch {
-            os_log(.error, log: .system, "%@", "Error loading Core Data: \(error.localizedDescription)")
-        }
+//        STTconn.setDelegate(self)
         
         setupLayout()       // 홈 화면 UI 세팅
         let dirExists = (try? mpWAVURL.checkResourceIsReachable()) ?? false
@@ -166,19 +154,27 @@ class MainViewController: UIViewController {
     // 재생 / 정지
     private func toggleAudio(_ flag: Bool) {
         if flag {
-            // Connect to STT Server
+            // Connect to WS Server
             do {
                 LoadingIndicator.showLoading()
-                try STTconn.connect()
+//                try STTconn.connect()
+                STTConn = WS()
+                DBConn = WS()
+                try STTConn.connect(mode: "STT")
+                try DBConn.connect(mode: "DB")
+                bind(ws: STTConn, mode: "STT")
+                bind(ws: DBConn, mode: "DB")
             } catch let err {
                 LoadingIndicator.hideLoading()
-                let messages = "Error connecting to STT Server: \(err.localizedDescription)"
+                let messages = "Error connecting to WS Server: \(err.localizedDescription)"
                 os_log(.error, log: .audio, "%@", messages)
                 showToast(messages)
             }
         } else {
             // Disconnect from STT Server
-            STTconn.disconnect()
+//            STTconn.disconnect()
+            STTConn.disconnect()
+            DBConn.disconnect()
             
             micBtn.isSelected = false
             avPlayer.pause()
@@ -243,24 +239,6 @@ class MainViewController: UIViewController {
         }
     }
     
-    // 로컬에 변경값 저장
-    private func saveLocalData() {
-        do {
-            let flags = try container.viewContext.fetch(Flag.fetchRequest())
-            if flags.count > 0 {
-                let flag = flags[0]
-//                flag.record = audioEngine.isRecording
-            } else if let entity = NSEntityDescription.entity(forEntityName: "Flag", in: container.viewContext) {
-                let flag = NSManagedObject(entity: entity, insertInto: container.viewContext)
-//                flag.setValue(audioEngine.isRecording, forKey: "record")
-            }
-            try container.viewContext.save()
-//            os_log(.info, log: .audio, "%@", "record flag set to \(audioEngine.isRecording)")
-        } catch {
-            os_log(.error, log: .system, "%@", "Error saving Core Data : \(error.localizedDescription)")
-        }
-    }
-    
     // 헤드폰 연결 확인
     private func checkHeadphoneConnected() {
         let connectedHeadphones = audioEngine.session.currentRoute.outputs.compactMap {
@@ -321,70 +299,103 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController : STTDelegate {
-    func STTConnect() {
-        let message = "Connected to STT Server!"
+extension MainViewController {
+    func bind(ws: WS, mode: String) {
+        ws.listener = { [weak self] event in
+            switch event {
+            case let .connect(socket):
+                self?.WSConnect(mode: mode)
+            case let .disconnect(socket, code, reason):
+                self?.WSDisconnect(mode: mode, code: code, reason: reason)
+            case let .message(socket, text):
+                self?.WSCallback(mode: mode, text: text)
+            case let .data(socket, data):
+                self?.WSCallback(mode: mode, data: data)
+            case let .error(socket, error):
+                self?.WSError(mode: mode, error: error)
+            }
+        }
+    }
+    
+    func WSConnect(mode: String) {
+        let message = "Connected to \(mode) Server!"
         os_log(.info, log: .system, "%@", message)
-        DispatchQueue.main.sync {
-            minuteView.isHidden = false
-            emptyTextView.isHidden = true
-            minuteView.text = ""
-            
-            micBtn.isSelected = true
-            avPlayer.play()
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                LoadingIndicator.hideLoading()
-                audioEngine.start_audio_unit()
+        if (mode == "STT") {
+            isSTTConnected = true
+        }
+        else {
+            isDBConnected = true
+        }
+        
+        if isSTTConnected && isDBConnected {
+            DispatchQueue.main.sync {
+                minuteView.isHidden = false
+                emptyTextView.isHidden = true
+                minuteView.text = ""
+                
+                micBtn.isSelected = true
+                avPlayer.play()
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    LoadingIndicator.hideLoading()
+                    audioEngine.start_audio_unit()
+                }
             }
         }
     }
     
-    func STTCallback(text: String) {
+    func WSCallback(mode: String, text: String) {
         DispatchQueue.main.async {
-            guard let data = text.data(using: .utf8) else {
-                return
+            if mode == "STT" {
+                self.minuteView.text = text
+                let range = NSMakeRange(self.minuteView.text.count - 1, 0)
+                self.minuteView.scrollRangeToVisible(range)
             }
-            let json = JSON(data)
-            guard let text = json["text"].string
             else {
-                let message = "WebSocket: Error parsing STT data"
-                os_log(.error, log: .system, "%@", message)
-                self.showToast(message)
-                return
+                let message = "DB sent: \(text)"
+                os_log(.info, log: .system, "%@", message)
+                DBConn.disconnect()
             }
-            self.minuteView.text = text
-            let range = NSMakeRange(self.minuteView.text.count - 1, 0)
-            self.minuteView.scrollRangeToVisible(range)
         }
     }
     
-    func STTCallback(data: Data) {
+    func WSCallback(mode: String, data: Data) {
         DispatchQueue.main.async {
-            let json = JSON(data)
-            guard let text = json["text"].string
-            else {
-                let message = "WebSocket: Error parsing STT data"
-                os_log(.error, log: .system, "%@", message)
-                self.showToast(message)
-                return
+            if mode == "STT" {
+                let json = JSON(data)
+                guard let text = json["text"].string
+                else {
+                    let message = "WebSocket: Error parsing WS data"
+                    os_log(.error, log: .system, "%@", message)
+                    self.showToast(message)
+                    return
+                }
+                self.minuteView.text = text
+                let range = NSMakeRange(self.minuteView.text.count - 1, 0)
+                self.minuteView.scrollRangeToVisible(range)
             }
-            self.minuteView.text = text
-            let range = NSMakeRange(self.minuteView.text.count - 1, 0)
-            self.minuteView.scrollRangeToVisible(range)
+            else {
+                let message = "DB sent: \(JSON(data))"
+                os_log(.info, log: .system, "%@", message)
+                DBConn.disconnect()
+            }
         }
     }
     
-    func STTError(message: String) {
+    func WSError(mode: String, error: Error?) {
         DispatchQueue.main.async {
             LoadingIndicator.hideLoading()
-            let message = "ERROR IN STTConnectionManager: \(message)"
+            let message = "Error from \(mode) server: \(error?.localizedDescription ?? "Unexpected")"
             os_log(.error, log: .system, "%@", message)
             self.Alert("ERROR".localized(), message, nil)
+            STTConn.disconnect()
+            DBConn.disconnect()
         }
     }
     
-    func STTDisconnect() {
+    func WSDisconnect(mode: String, code: String, reason: UInt16) {
         DispatchQueue.main.async {
+            let message = "Disconnected from \(mode): \(code) \(reason)"
+            os_log(.error, log: .system, "%@", message)
             if audioEngine.isRunning {
                 self.toggleAudio(false)
             }

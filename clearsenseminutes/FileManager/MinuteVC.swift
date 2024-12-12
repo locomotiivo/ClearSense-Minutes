@@ -103,7 +103,7 @@ class MinuteVC: UIViewController {
         list.removeAll()
         LoadingIndicator.showLoading()
         do {
-            try DBconn.DBRequest("GET", false, "/meetings/get-all-records/", [:]) { [weak self]
+            try DBManager.DBRequest("GET", false, "/meetings/get-all-records/", [:]) { [weak self]
                 (flag, res, msg, data) in
                 guard flag,
                 let data = data else {
@@ -262,7 +262,7 @@ class MinuteVC: UIViewController {
         var message = ""
         for item in selected {
             do {
-                try DBconn.DBRequest("DELETE", false, "/meetings/delete-record/\(item.id)", [:]) {
+                try DBManager.DBRequest("DELETE", false, "/meetings/delete-record/\(item.id)", [:]) {
                     (flag, res, msg, data) in
                     guard flag,
                           let data = data,
